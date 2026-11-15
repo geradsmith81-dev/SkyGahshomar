@@ -1,0 +1,208 @@
+{
+ "A_published": {
+  "n": 15,
+  "match": 15,
+  "mismatch_rows": []
+ },
+ "B_zanc": {
+  "shahanshahi": {
+   "days": 109573,
+   "mismatch": 0,
+   "first_mismatches": [],
+   "zanc_yz_on_2026_08_20": 1394,
+   "engine_yz_on_2026_08_20": 1396
+  },
+  "kadmi": {
+   "days": 109573,
+   "mismatch": 0,
+   "first_mismatches": [],
+   "zanc_yz_on_2026_08_20": 1394,
+   "engine_yz_on_2026_08_20": 1396
+  },
+  "fasli": {
+   "days": 109573,
+   "mismatch": 0,
+   "first_mismatches": [],
+   "zanc_yz_on_2026_08_20": 1394,
+   "engine_yz_on_2026_08_20": 1396
+  }
+ },
+ "C_heritage_grid": {
+  "n": 363,
+  "match": 363,
+  "with_month_name": 338,
+  "leap_shift_check": {
+   "meher_roj_aspandarmad_YZ1397": "2028-02-29",
+   "avardad_sal_gah_YZ1397": "2028-03-20"
+  }
+ },
+ "D_bastani_nowruz": {
+  "persiantools": {
+   "n": 300,
+   "differ": 0,
+   "years": []
+  },
+  "jdatetime": {
+   "n": 300,
+   "differ": 1,
+   "years": [
+    2124
+   ]
+  },
+  "mean_noon_52.5": {
+   "n": 300,
+   "differ": 1,
+   "years": [
+    2124
+   ]
+  },
+  "true_noon_tehran": {
+   "n": 300,
+   "differ": 0,
+   "years": []
+  },
+  "sky_taqwim_seasons_csv": {
+   "true_noon_52.5": 0,
+   "mean_noon_52.5": 0,
+   "true_noon_tehran": 0,
+   "n": 300,
+   "max_abs_time_diff_s": 0.0
+  },
+  "equinox_within_2_min_of_true_noon": [
+   {
+    "year": 2124,
+    "equinox_utc": "2124-03-20T08:38:00.852874+00:00",
+    "margin_s": 8.3
+   }
+  ]
+ },
+ "E_internal": {
+  "shahanshahi": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 301
+   },
+   "years": [
+    1219,
+    1519
+   ]
+  },
+  "kadmi": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 301
+   },
+   "years": [
+    1219,
+    1519
+   ]
+  },
+  "fasli": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 228,
+    "366": 73
+   },
+   "years": [
+    1219,
+    1519
+   ]
+  },
+  "bastani": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 228,
+    "366": 73
+   },
+   "years": [
+    3587,
+    3887
+   ]
+  },
+  "sasanian": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 301
+   },
+   "years": [
+    1219,
+    1519
+   ]
+  },
+  "sasanian:andargah=after_aspandarmad": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 301
+   },
+   "years": [
+    1219,
+    1519
+   ]
+  },
+  "sasanian:intercalation=kabisa_120": {
+   "days": 109573,
+   "roundtrip_fail": 0,
+   "sequence_fail": 0,
+   "year_lengths": {
+    "365": 299,
+    "395": 2
+   },
+   "years": [
+    1218,
+    1518
+   ]
+  },
+  "kadmi_equals_shahanshahi_plus_30": {
+   "fail": 0
+  },
+  "fasli_navroz_21_march": {
+   "n": 300,
+   "fail": 0
+  },
+  "fasli_leap_iff_next_feb29": {
+   "fail": 0
+  },
+  "bastani_mehregan_is_civil_10_mehr": {
+   "n": 299,
+   "fail": 0
+  },
+  "bastani_tir_jashan_is_civil_10_tir": {
+   "n": 299,
+   "fail": 0
+  },
+  "bastani_leap_iff_civil_esfand_30": {
+   "n": 299,
+   "fail": 0
+  },
+  "festival_structure": {
+   "festivals_checked": 47838,
+   "fail": 0,
+   "examples": []
+  }
+ },
+ "F_gahs": {
+  "place_days": 144,
+  "fail": 0,
+  "examples": [],
+  "sunrise_rule": {
+   "1_min_before_sunrise_15_aug_2026": "Vahishtoisht Gatha, YZ 1395",
+   "1_min_after": "Hormazd roj, Fravardin mah, YZ 1396"
+  },
+  "mumbai_true_noon_range_IST": [
+   "12:22",
+   "12:52"
+  ]
+ }
+}

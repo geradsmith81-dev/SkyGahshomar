@@ -1,0 +1,36 @@
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+# Sky Gahshomar is always dark (night over Persepolis stone, Oxus gold, limestone ivory); the same colours are given
+# for the light slot so that phones in light mode stay dark. theme.FORCE_CSS sets them as well.
+[theme]
+base = "dark"
+font = "serif"
+primaryColor = "#ecc566"
+backgroundColor = "#0e1420"
+secondaryBackgroundColor = "#121a27"
+textColor = "#f5eedf"
+linkColor = "#a9d6f5"
+
+[theme.dark]
+primaryColor = "#ecc566"
+backgroundColor = "#0e1420"
+secondaryBackgroundColor = "#121a27"
+textColor = "#f5eedf"
+linkColor = "#a9d6f5"
+
+[theme.light]
+primaryColor = "#ecc566"
+backgroundColor = "#0e1420"
+secondaryBackgroundColor = "#121a27"
+textColor = "#f5eedf"
+linkColor = "#a9d6f5"
+codeBackgroundColor = "#18212f"
+codeTextColor = "#ecc566"
+borderColor = "rgba(236, 197, 102, 0.3)"
+dataframeBorderColor = "rgba(236, 197, 102, 0.3)"
+dataframeHeaderBackgroundColor = "#121a27"
+dataframeHeaderTextColor = "#ecc566"

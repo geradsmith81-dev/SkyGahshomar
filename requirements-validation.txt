@@ -1,0 +1,8 @@
+# only for validation/validate.py, tests/, check_content.py and the tools/ scripts
+-r requirements.txt
+persiantools
+jdatetime
+quickjs
+fonttools
+pytest
+markdown

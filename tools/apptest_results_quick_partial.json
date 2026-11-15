@@ -1,0 +1,29 @@
+{
+ "runs": 536,
+ "pass": 536,
+ "fail": 0,
+ "failures": [],
+ "groups": {
+  "A_default": {
+   "runs": 2,
+   "pass": 2
+  },
+  "B_preset": {
+   "runs": 99,
+   "pass": 99
+  },
+  "C_cal_place": {
+   "runs": 90,
+   "pass": 90
+  },
+  "D_dates": {
+   "runs": 96,
+   "pass": 96
+  },
+  "E_settings": {
+   "runs": 249,
+   "pass": 249
+  }
+ },
+ "crash": "Traceback (most recent call last):\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\orgs\\3650afaf-9652-40c2-a8bb-384cfaf6d2a6\\workspaces\\0e6c0076-0ca8-4141-993d-6851708eb272\\bundle\\SkyGahshomarApp\\tools\\apptest_sweep.py\", line 268, in <module>\n    main(quick)\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\orgs\\3650afaf-9652-40c2-a8bb-384cfaf6d2a6\\workspaces\\0e6c0076-0ca8-4141-993d-6851708eb272\\bundle\\SkyGahshomarApp\\tools\\apptest_sweep.py\", line 217, in main\n    goto(at, pg)\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\orgs\\3650afaf-9652-40c2-a8bb-384cfaf6d2a6\\workspaces\\0e6c0076-0ca8-4141-993d-6851708eb272\\bundle\\SkyGahshomarApp\\tools\\apptest_sweep.py\", line 116, in goto\n    at.radio(key=\"page\").set_value(page).run()\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\conda\\envs\\luach\\Lib\\site-packages\\streamlit\\testing\\v1\\element_tree.py\", line 486, in run\n    return self.root.run(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\conda\\envs\\luach\\Lib\\site-packages\\streamlit\\testing\\v1\\element_tree.py\", line 4251, in run\n    result = self._runner._run(widget_states, timeout=timeout)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\conda\\envs\\luach\\Lib\\site-packages\\streamlit\\testing\\v1\\app_test.py\", line 698, in _run\n    self._tree = script_runner.run(\n                 ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\conda\\envs\\luach\\Lib\\site-packages\\streamlit\\testing\\v1\\local_script_runner.py\", line 198, in run\n    require_widgets_deltas(self, timeout)\n  File \"C:\\Users\\Gerad Smith\\.claude-science\\conda\\envs\\luach\\Lib\\site-packages\\streamlit\\testing\\v1\\local_script_runner.py\", line 266, in require_widgets_deltas\n    raise RuntimeError(err_string)\nRuntimeError: AppTest script run timed out after 180(s)\n"
+}

@@ -1,0 +1,49 @@
+{
+ "runs": 1040,
+ "pass": 1040,
+ "fail": 0,
+ "failures": [],
+ "groups": {
+  "A_default": {
+   "runs": 2,
+   "pass": 2
+  },
+  "B_preset": {
+   "runs": 99,
+   "pass": 99
+  },
+  "C_cal_place": {
+   "runs": 405,
+   "pass": 405
+  },
+  "D_dates": {
+   "runs": 96,
+   "pass": 96
+  },
+  "E_settings": {
+   "runs": 300,
+   "pass": 300
+  },
+  "E_bastani": {
+   "runs": 15,
+   "pass": 15
+  },
+  "E_sasanian": {
+   "runs": 24,
+   "pass": 24
+  },
+  "F_use": {
+   "runs": 11,
+   "pass": 11
+  },
+  "F_month_nav": {
+   "runs": 18,
+   "pass": 18
+  },
+  "F_month_walk": {
+   "runs": 70,
+   "pass": 70
+  }
+ },
+ "seconds": 200.3
+}

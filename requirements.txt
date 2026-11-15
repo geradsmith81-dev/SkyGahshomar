@@ -1,0 +1,7 @@
+streamlit>=1.55
+skyfield>=1.54
+numpy>=2.0
+pandas>=2.2
+geonamescache>=2.0
+tzdata
+pygeomag>=1.1

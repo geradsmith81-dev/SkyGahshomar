@@ -144,6 +144,34 @@ civil-calendar variants are noted beside them: **Tirgan on 13 Tir**, the date ke
 observances; they are shown with the Bastani calendar, and with the Parsi calendars only if you switch on 'Show
 Iranian civil observances'.
 
+### 9a. Prayers (links to the texts)
+Prayer names in the app are links. They open the prayer on **avesta.org** (Avesta -- Zoroastrian Archives, edited by
+Joseph H. Peterson) in a new tab, with the Avestan text and an English translation. The Khorda Avesta follows Ervad
+K. E. Kanga; the Yashts and the Yasna use the Sacred Books of the East translations (J. Darmesteter, L. H. Mills), with
+some Gatha chapters in Bartholomae's translation (via I. J. S. Taraporewala). The app only links to these pages and
+copies no prayer text. The **Prayers** page lists all 41 prayers by group and links the whole Khorda Avesta in
+English, Gujarati and Persian (PDF).
+
+Where the links appear, and which prayers are linked, follows the rubrics of the Khorda Avesta:
+- **Today, the current Gah:** the kusti, the Srosh Baj and the Gah prayer. In the three day watches (Havan or Second
+  Havan, Rapithwin, Uziran) also the Khorshed and Meher Niyayesh. In Aiwisruthrem also the Srosh Yasht Vadi and the
+  Mah Niyayesh, and in Ushahin also the Hoshbam.
+- **Gatha days:** the Gatha of the day (Ahunavaiti, Ushtavaiti, Spentamainyu, Vohukhshathra, Vahishtoishti) and the
+  Afrinagan of the Gatha days.
+- **Festivals (Today and the Festivals page):**
+  - Pateti: the Patet Pashemani.
+  - Muktad and Farvardigan: the Farvardin Yasht and the Afrinagans.
+  - The Gahambars: the Afrinagan of the Gahambar.
+  - The Rapithwin festival: the Afrinagan of Rapithwin.
+  - Each name-day jashan: the Yasht or Niyayesh of that day's yazata, e.g. Avan Niyayesh and Aban Yasht for the Avan
+    jashan, Atash Niyayesh for Adar. Where the Khorda Avesta has no separate Yasht (Amardad, Shehrevar,
+    Aspandarmad), the Siroza is linked.
+- **The Moon:** the Mah Niyayesh on the Today page and in the list of Mah Niyayesh days.
+
+Families and priests may follow other customs. The Persian and Gujarati prayer names were made for the app; they are
+listed with the other unconfirmed spellings on the About page. `tools/check_prayer_links.py` re-checks that every link
+loads and every section anchor exists (63 links, 0 problems in November 2026).
+
 ### 10. Caveats
 - The **Sasanian calendar is a reconstruction**, shown for comparison like Sky Luach's 'Early Temple Period'; no
   community keeps it, and its options (andargāh position, 120-year intercalation and its phase) are scholarly

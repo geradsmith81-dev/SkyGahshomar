@@ -265,6 +265,9 @@ h1, h2, h3, h4 {{ font-family: {SERIF}; color: {GOLD}; }}
 .gs-grid .gs-dayname {{ line-height: 1.3; }}
 .gs-grid .gs-dayname .gs-ae {{ font-size: .9rem; overflow-wrap: anywhere; }}
 a {{ color: {LINK}; }}
+.gs-pr {{ color: {LINK}; text-decoration: underline dotted; text-underline-offset: 3px; }}
+.gs-pr:hover {{ color: {GOLD}; }}
+.gs-prline {{ margin: .25rem 0; font-size: .92rem; line-height: 1.6; }}
 @media (pointer: coarse) {{
   .gs-grid td {{ height: auto; min-height: 80px; }}
   div[data-testid="stRadio"] label {{ padding: 6px 4px; }}

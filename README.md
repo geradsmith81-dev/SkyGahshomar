@@ -5,7 +5,7 @@ the Iranian Bastani**, plus a **Sasanian reconstruction** shown for comparison o
 [Sky Luach](https://github.com/geradsmith81-dev/sky-luach) (Jewish) and [Sky Taqwim](https://github.com/geradsmith81-dev/sky-taqwim) (Islamic).
 
 - **Pages:** Today (roj · mah · year, the current Gah, festivals with their histories, the Moon and the Mah Niyayesh,
-  and a live *Face the light* compass toward the Sun or the Moon), Month, Year, Gahs (timetable), Festivals, Compare
+  and a live *Face the light* compass toward the Sun or the Moon), Month, Year, Gahs (timetable), Prayers (the official prayers as links to their texts), Festivals, Compare
   (the only page that shows all five calendars side by side), Traditions (communities with *Use* presets), How it
   works, About.
 - **Names** in English · Persian · Gujarati, with Avestan script for the roj and Gatha day names (`names.py`).
@@ -40,6 +40,10 @@ streamlit run app.py --server.port 8513
    **Advanced settings** Python **3.12**.
 
 ## Tests
+
+- `python tools/check_prayer_links.py` checks every prayer link (needs internet).
+- `python tools/prayer_apptest.py` runs focused headless checks of the prayer links.
+
 
 ```
 pip install -r requirements-validation.txt

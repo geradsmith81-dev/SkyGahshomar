@@ -3,6 +3,12 @@
 Sky Gahshomar's own code is under the MIT License (see [LICENSE](LICENSE)), the same licence and copyright holder
 as its sibling apps Sky Luach and Sky Taqwim. The material below keeps its own licence.
 
+## Linked texts (not included)
+
+- **Prayer texts** are not part of the app. Prayer names link to Avesta -- Zoroastrian Archives
+  (https://www.avesta.org/, ed. Joseph H. Peterson), which hosts the Avestan texts and translations (Kanga's Khorda
+  Avesta; Darmesteter and Mills, Sacred Books of the East). Their copyright and terms are those of that site.
+
 ## Data and models
 
 - **NASA JPL DE440s** planetary ephemeris (`ephem/de440s.bsp`, not in the GitHub repository; downloaded from

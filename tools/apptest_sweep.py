@@ -27,8 +27,8 @@ import sects  # noqa: E402
 import zcalendars as zc  # noqa: E402
 
 CALS = list(zc.CALENDARS)
-PAGES = ["Today", "Month", "Year", "Gahs", "Festivals", "Compare", "Traditions", "How", "About"]
-MARK = {"Today": "gs-gahs", "Month": "gs-grid", "Year": "gs-mini", "Gahs": "gs-times", "Festivals": "gs-table",
+PAGES = ["Today", "Month", "Year", "Gahs", "Prayers", "Festivals", "Compare", "Traditions", "How", "About"]
+MARK = {"Prayers": "gs-pr", "Today": "gs-gahs", "Month": "gs-grid", "Year": "gs-mini", "Gahs": "gs-times", "Festivals": "gs-table",
         "Compare": "gs-table", "Traditions": "gs-diagram", "How": None, "About": "Uncertain spellings"}
 TROMSO = {"name": "Tromsø", "fa": "", "gu": "", "country": "NO", "lat": 69.6489, "lon": 18.95508, "tz": "Europe/Oslo",
           "elev": 0.0, "label": "Tromsø, Norway (high latitude)"}          # GeoNames 3133895

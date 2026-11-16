@@ -19,6 +19,7 @@ import face_light_live
 import festival_history as fh
 import festivals as F
 import gahs as G
+import prayers as PR
 import iran_solar as irs
 import names
 import ornaments as orn
@@ -142,6 +143,24 @@ def fchip(key: str, align_right: bool = False) -> str:
 
 def card(title: str, body: str) -> str:
     return f"<div class='gs-card'><h3>{title}</h3>{body}</div>"
+
+
+def prayer_link(key: str, all_links: bool = False) -> str:
+    """A prayer name that opens its text (avesta.org) in a new tab."""
+    pr = PR.PRAYERS[key]
+    links = pr["links"] if all_links else pr["links"][:1]
+    if not all_links:
+        return (f"<a class='gs-pr' href='{esc(links[0][1])}' target='_blank' title='{esc(pr['when'])}'>"
+                f"{esc(pr['en'])}</a>")
+    return " · ".join(f"<a class='gs-pr' href='{esc(u)}' target='_blank'>{esc(lab)}</a>" for lab, u in links)
+
+
+def prayer_line(keys, label: str = "Read") -> str:
+    keys = [k for k in keys if k in PR.PRAYERS]
+    if not keys:
+        return ""
+    return (f"<div class='gs-prline'><span class='gs-muted'>{esc(label)}:</span> "
+            + " <span class='gs-sep'>·</span> ".join(prayer_link(k) for k in keys) + " <span class='gs-muted'>↗</span></div>")
 
 
 def place_tuple(place: dict) -> tuple:
@@ -291,6 +310,8 @@ def render_today(ctx):
             f"{sunrise_note}")
     if re_.get("meaning"):
         body += f"<div class='gs-muted'>{esc(re_['meaning'])}</div>"
+    if z.is_gatha:
+        body += prayer_line(PR.GATHA_DAY_PRAYERS.get(z.roj_key, []), "Gatha of the day")
     st.html(card("Today", body) + sasanian_note(cal))
 
     # --- Gahs
@@ -305,7 +326,8 @@ def render_today(ctx):
         info = G.GAHS.get(cur[0], {})
         gb = (f"<div class='gs-big' style='font-size:1.2rem'>Now: {theme.names_html(zn.GAH[cur[0]], with_ae=True)}</div>"
               f"<div class='gs-muted'>{hm(cur[1])} – {hm(cur[2])}{(' · ' + esc(cur[3])) if cur[3] else ''}</div>"
-              f"<div>Presiding: {esc(info.get('presiding', ''))}. {esc(info.get('prayers', ''))}</div>" + strip)
+              f"<div>Presiding: {esc(info.get('presiding', ''))}. {esc(info.get('prayers', ''))}</div>"
+              + prayer_line(PR.GAH_PRAYERS.get(cur[0], []), "Prayers of this Gah") + strip)
     if g["polar"]:
         gb += (f"<div class='gs-note'>Polar {esc(g['polar'])}: the Sun does not {'set' if g['polar'] == 'day' else 'rise'} "
                "here today, so sunrise and sunset are taken as true noon − 6 h and + 6 h (an app convention).</div>")
@@ -322,7 +344,8 @@ def render_today(ctx):
         for f in fl:
             k = (rd - f.start).days + 1
             extra = f" <span class='gs-muted'>day {k} of {f.days}</span>" if f.days > 1 else ""
-            rows.append(f"<div style='margin:.2rem 0'>{fchip(f.key)}{extra} <span class='gs-muted'>{esc(f.note)}</span></div>")
+            rows.append(f"<div style='margin:.2rem 0'>{fchip(f.key)}{extra} <span class='gs-muted'>{esc(f.note)}</span>"
+                        f"{prayer_line(PR.FESTIVAL_PRAYERS.get(f.key, []))}</div>")
         fb = "".join(rows) + "<div class='gs-muted'>Click a festival for its history and sources.</div>"
     else:
         fb = "<div class='gs-muted'>No festival on this roj.</div>"
@@ -341,7 +364,7 @@ def render_today(ctx):
     illum = float(ftl["moon"].get("illumination", 0.0))
     today_mn = [p for p in ph if p["local"].date() == now.date() and p["mah_niyayesh"]]
     mb = (f"<div class='gs-moonrow'>{theme.moon(illum, waxing, 46)}<div><b>{illum * 100:.0f}% lit</b>, "
-          f"{'waxing' if waxing else 'waning'}; the Moon is {ftl['moon']['alt']:.0f}° "
+          f"{'waxing' if waxing else 'waning'}; the Moon is {abs(ftl['moon']['alt']):.0f}° "
           f"{'above' if ftl['moon']['alt'] > 0 else 'below'} the horizon.</div></div>")
     if today_mn:
         p = today_mn[0]
@@ -350,6 +373,7 @@ def render_today(ctx):
     mb += "<div class='gs-moonrow' style='margin-top:.35rem'>" + "".join(
         f"<span class='gs-ph'>{theme.moon_glyph(PHASE_GLYPH[p['phase']], 18)} {esc(p['name'])} "
         f"{p['local']:%a %d %b %H:%M}{' · <b>Mah Niyayesh</b>' if p['mah_niyayesh'] else ''}</span>" for p in nxtp[:4]) + "</div>"
+    mb += prayer_line(["mah_niyayesh"])
     mb += ("<div class='gs-muted'>The Mah Niyayesh names the Moon's stations: new moon (antarə.måŋha), full moon "
            "(pərənō.måŋha) and the half-moon (vīšaptaθa). Phases from JPL DE440s, in your time zone.</div>")
     st.html(card("Moon · " + theme.names_html(zn.FESTIVAL["mah_niyayesh"]), mb))
@@ -523,12 +547,14 @@ def render_gahs(ctx):
                 "sunset are taken as true noon − 6 h and + 6 h (an app convention, not a priestly ruling).</div>")
     # explainer
     trs = "".join(f"<tr><td>{theme.names_html(zn.GAH[k], with_ae=True)}</td><td>{esc(G.GAHS[k]['period'])}</td>"
-                  f"<td>{esc(G.GAHS[k]['presiding'])}</td><td>{esc(G.GAHS[k]['prayers'])}</td>"
+                  f"<td>{esc(G.GAHS[k]['presiding'])}</td><td>{esc(G.GAHS[k]['prayers'])}{prayer_line(PR.GAH_PRAYERS.get(k, []))}</td>"
                   f"<td>{esc(G.GAHS[k]['note'])}<div class='gs-src'>{esc(G.GAHS[k]['src'])}</div></td></tr>"
                   for k in G.GAH_ORDER)
     st.html(card("The five Gahs",
                  f"<table class='gs-table'><tr><th>Gah</th><th>When</th><th>Presiding</th><th>Prayers</th><th>Note</th></tr>"
                  f"{trs}</table>"))
+    st.caption("Prayer names are links: they open the Avestan text and English translation on avesta.org in a new tab. "
+               "The Prayers page lists them all.")
     practice = ("Summer rule (Rapithwin from Fravardin to Meher mah, Second Havan otherwise)"
                 if ctx["s"]["rapithwin"] == "summer" else "Bundahishn winter rule (four watches outside the Rapithwin season)")
     st.html(card("Rapithwin", f"<p><b>Setting:</b> {esc(practice)}.</p><p>{esc(G.RAPITHWIN)}</p>"
@@ -564,10 +590,11 @@ def render_festivals(ctx):
                 t, src = CIVIL_VARIANTS[f.key]
                 extra += f"<div class='gs-muted'>{esc(t)}</div><div class='gs-src'>{esc(src)}</div>"
             extra += "</td>"
+        rd_ = ' · '.join(prayer_link(k) for k in PR.FESTIVAL_PRAYERS.get(f.key, []))
         rows.append(f"<tr><td>{fchip(f.key)}</td><td>{zspan(ctx, f)}</td><td>{civ}</td><td>{f.days}</td>{extra}"
-                    f"<td class='gs-muted'>{esc(f.note)}</td></tr>")
+                    f"<td class='gs-muted'>{esc(f.note)}</td><td>{rd_}</td></tr>")
     head = ("<tr><th>Festival</th><th>Zoroastrian date</th><th>Civil date</th><th>Days</th>"
-            + ("<th>Iranian civil date</th>" if cal == "bastani" else "") + "<th>Rule</th></tr>")
+            + ("<th>Iranian civil date</th>" if cal == "bastani" else "") + "<th>Rule</th><th>Read ↗</th></tr>")
     z0 = zc.to_zdate(zc.navroz(y, cal, **copts(ctx, cal)), cal, **copts(ctx, cal))
     st.html(f"<div class='gs-mdnav'>{theme.calendar_badge(cal)} {era_html(z0, ctx['s']['era'])}</div>"
             + sasanian_note(cal) + f"<table class='gs-table'>{head}{''.join(rows)}</table>"
@@ -582,12 +609,32 @@ def render_festivals(ctx):
     st.html(card("Mah Niyayesh days (new and full moons)",
                  "<div class='gs-moonrow'>" + "".join(
                      f"<span class='gs-ph'>{theme.moon_glyph(PHASE_GLYPH[p['phase']], 16)} {p['local']:%d %b %Y %H:%M}</span>"
-                     for p in ph) + "</div>" + f"<div class='gs-muted'>In {esc(ctx['place']['tz'])}. {fchip('mah_niyayesh')}</div>"))
+                     for p in ph) + "</div>" + f"<div class='gs-muted'>In {esc(ctx['place']['tz'])}. {fchip('mah_niyayesh')}</div>" + prayer_line(['mah_niyayesh'])))
     if cal in fh.CAL_H:
         t, src = fh.CAL_H[cal]
         st.html(card("About this calendar · " + theme.names_html(names.CALENDAR[cal]),
                      f"<p>{esc(t)}</p><div class='gs-src'>Sources: {esc(src)}</div>"))
 
+
+
+# ---------------------------------------------------------------------------------------------- Prayers
+def render_prayers(ctx):
+    st.html(card("Prayers", "<p>The official prayers of the Khorda Avesta and the Gathas. Each name and link opens the "
+                 "text on avesta.org in a new tab: the Avestan text with an English translation. The app links to "
+                 "these pages and does not copy them.</p>"
+                 + "<div class='gs-prline'><b>Whole books:</b> " + " <span class='gs-sep'>·</span> ".join(
+                     f"<a class='gs-pr' href='{esc(u)}' target='_blank'>{esc(lab)}</a>" for lab, u in PR.BOOKS) + " ↗</div>"
+                 + f"<div class='gs-src'>{esc(PR.SOURCE_NOTE)}</div>"))
+    for gkey, gtitle in PR.GROUPS:
+        rows = "".join(
+            f"<tr><td>{prayer_link(k)}<div>{theme.fa(v['fa'])} {theme.gu(v['gu'])}</div></td>"
+            f"<td>{esc(v['when'])}</td><td>{prayer_link(k, all_links=True)}</td></tr>"
+            for k, v in PR.PRAYERS.items() if v["group"] == gkey)
+        st.html(card(esc(gtitle), "<div class='gs-scroll'><table class='gs-table'><tr><th>Prayer</th><th>When</th>"
+                     f"<th>Read ↗</th></tr>{rows}</table></div>"))
+    st.caption("Which prayers belong to each Gah and festival follows the rubrics of the Khorda Avesta; for a name-day "
+               "jashan the app links the Yasht or Niyayesh of that day's yazata (the Siroza where there is no separate "
+               "Yasht). Families and priests may follow other customs.")
 
 # ---------------------------------------------------------------------------------------------- Compare
 COMPARE_KEYS = ["navroz", "jamshedi_navroz", "khordad_sal", "farvardigan", "gahambar_maidyozarem", "jashan_tir",
@@ -788,8 +835,8 @@ def render_about(ctx):
     except (OSError, ValueError):
         pass
     rows = "".join(f"<tr><td>{esc(t)}</td><td>{esc(str(k) if k else '')}</td><td>{esc(fld)}</td><td>{esc(why)}</td></tr>"
-                   for (t, k, fld), why in sorted(names.UNCERTAIN.items(), key=lambda x: (str(x[0][0]), str(x[0][1]), x[0][2])))
-    st.html(card(f"Uncertain spellings ({len(names.UNCERTAIN)})",
+                   for (t, k, fld), why in sorted({**names.UNCERTAIN, **PR.UNCERTAIN}.items(), key=lambda x: (str(x[0][0]), str(x[0][1]), x[0][2])))
+    st.html(card(f"Uncertain spellings ({len(names.UNCERTAIN) + len(PR.UNCERTAIN)})",
                  "<p>Forms the content track could not confirm in a source, or chose between variants:</p>"
                  f"<div class='gs-scroll'><table class='gs-table'><tr><th>Table</th><th>Key</th><th>Field</th><th>Why</th></tr>"
                  f"{rows}</table></div>"))

@@ -34,6 +34,7 @@ PAGES = {
     "Month": ("Month", pages.render_month),
     "Year": ("Year", pages.render_year),
     "Gahs": ("Gahs", pages.render_gahs),
+    "Prayers": ("Prayers", pages.render_prayers),
     "Festivals": ("Festivals", pages.render_festivals),
     "Compare": ("Compare", pages.render_compare),
     "Traditions": ("Traditions", pages.render_traditions),

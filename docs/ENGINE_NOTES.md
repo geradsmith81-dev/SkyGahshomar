@@ -1,8 +1,9 @@
 # Sky Gahshomar engine · گاهشمار — rules, sources, API
 
 Flat Python modules (Python 3.12; conda env `luach`). Astronomy: NASA JPL DE440s via Skyfield
-(1850–2149). The ephemeris is **not** shipped: put `de440s.bsp` in `ephem/` next to the modules, or
-set `SKY_EPHEM_DIR` (e.g. `C:\AfterglowApp\ephem`); otherwise it is downloaded from JPL once.
+(1850–2149). The ephemeris is **not** in the GitHub copy: put `de440s.bsp` in `ephem/` next to the modules, or
+set `SKY_EPHEM_DIR`; otherwise it is downloaded from JPL once (on the desktop copy into
+`%LOCALAPPDATA%\SkyGahshomar\ephem`, never into the program folder). The Windows desktop zip ships the file.
 
 | module | contents |
 |---|---|

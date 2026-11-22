@@ -26,7 +26,9 @@ import pandas as pd
 import sky_engine as se
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEASONS_FILE = os.path.join(HERE, "data", "seasons.csv")
+SEASONS_FILE = os.path.join(HERE, "data", "seasons.csv")      # shipped with the app
+# rebuilt here if the shipped table is missing (desktop copy: %LOCALAPPDATA%\\SkyGahshomar\\data, never the program folder)
+SEASONS_REBUILT = os.path.join(se._fallback_dir("data"), "seasons.csv")
 IRST = timezone(timedelta(hours=3, minutes=30))
 RULES = {
     "true_noon_52.5": "Equinox before true solar noon on the 52.5 E meridian (Calendar Center, Univ. of Tehran)",
@@ -62,15 +64,16 @@ def build_seasons(start: date = date(1850, 1, 1), end: date = date(2150, 1, 10))
             for rule, noon in (("true_noon_52.5", n525), ("mean_noon_52.5", nmean), ("true_noon_tehran", nteh)):
                 row[f"nowruz_{rule}"] = (d if t < noon else d + timedelta(days=1)).isoformat()
         rows.append(row)
-    os.makedirs(os.path.dirname(SEASONS_FILE), exist_ok=True)
-    pd.DataFrame(rows).to_csv(SEASONS_FILE, index=False)
+    os.makedirs(os.path.dirname(SEASONS_REBUILT), exist_ok=True)
+    pd.DataFrame(rows).to_csv(SEASONS_REBUILT, index=False)
 
 
 @lru_cache(maxsize=1)
 def season_table() -> pd.DataFrame:
-    if not os.path.exists(SEASONS_FILE):
+    path = SEASONS_FILE if os.path.exists(SEASONS_FILE) else SEASONS_REBUILT
+    if not os.path.exists(path):
         build_seasons()
-    df = pd.read_csv(SEASONS_FILE)
+    df = pd.read_csv(path)
     df["utc"] = pd.to_datetime(df["utc"], utc=True, format="ISO8601")
     return df
 

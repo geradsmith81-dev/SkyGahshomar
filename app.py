@@ -16,6 +16,10 @@ import streamlit as st  # noqa: E402
 st.set_page_config(page_title="Sky Gahshomar · گاه‌شمار", page_icon=os.path.join(HERE, "assets", "launcher", "icon-192.png"),
                    layout="wide", initial_sidebar_state="auto")
 
+import desktop as dk  # noqa: E402  (desktop-only controls; inert on the hosted copy)
+
+dk.require_password(st)
+
 from zoneinfo import ZoneInfo  # noqa: E402
 
 import device  # noqa: E402
@@ -240,3 +244,5 @@ st.html("<div class='gs-frieze' role='presentation' style='margin-top:1.2rem'></
         "<div class='gs-muted' style='font-size:.8rem'>Astronomy: NASA JPL DE440s via Skyfield. Dates are computed "
         "from the published rules of each calendar; communities announce their own dates, and where a printed "
         "almanac differs, follow it. MIT License (LICENSE).</div>")
+
+dk.desktop_controls(st)   # Quit (desktop copy, this computer only); nothing on the hosted copy

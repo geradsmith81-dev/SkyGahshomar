@@ -45,18 +45,31 @@ class EphemerisMissing(RuntimeError):
     pass
 
 
+def _fallback_dir(sub: str) -> str:
+    """Where a replacement copy is written if a shipped file is missing. The desktop copy never writes
+    into its program folder: it uses %LOCALAPPDATA%\\SkyGahshomar\\<sub> (SKYGAHSHOMAR_DESKTOP=1 is set
+    only by tools/launch.py). The hosted copy keeps the old place inside the app folder."""
+    if os.environ.get("SKYGAHSHOMAR_DESKTOP") == "1":
+        base = os.environ.get("LOCALAPPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Local")
+        return os.path.join(base, "SkyGahshomar", sub)
+    return os.path.join(HERE, sub)
+
+
 @lru_cache(maxsize=1)
 def load():
     """Return (timescale, ephemeris, filename). Prefers de440.bsp if present, else de440s.bsp,
     downloading de440s.bsp from JPL if neither file is there."""
+    dl_dir = _fallback_dir("ephem")
     dirs = [EPHEM_DIR] + ([os.environ["SKY_EPHEM_DIR"]] if os.environ.get("SKY_EPHEM_DIR") else [])
+    if dl_dir not in dirs:
+        dirs.append(dl_dir)
     for d in dirs:
         for name in ("de440.bsp", "de440s.bsp"):
             if os.path.exists(os.path.join(d, name)):
                 loader = Loader(d, verbose=False)
                 return loader.timescale(builtin=True), loader(name), name
-    os.makedirs(EPHEM_DIR, exist_ok=True)
-    loader = Loader(EPHEM_DIR, verbose=False)
+    os.makedirs(dl_dir, exist_ok=True)
+    loader = Loader(dl_dir, verbose=False)
     ts = loader.timescale(builtin=True)
     try:
         url = "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de440s.bsp"

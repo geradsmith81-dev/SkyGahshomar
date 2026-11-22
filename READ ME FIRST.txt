@@ -1,0 +1,73 @@
+SKY GAHSHOMAR - the Zoroastrian calendars from NASA JPL astronomy
+=================================================================
+
+WHAT IT DOES
+  * Shows the Shahanshahi, Kadmi, Fasli and Iranian Bastani calendars, plus a Sasanian
+    reconstruction for comparison: today's roj, mah and year, the current Gah, festivals, the
+    Moon and the Mah Niyayesh, and a "Face the light" compass toward the Sun or the Moon.
+  * Works out sunrise, noon, sunset and the five Gahs for your place from the NASA JPL DE440s
+    ephemeris (1850-2149). Your place is found by the browser (it asks once), chosen from presets,
+    or typed in.
+
+FIRST START (Windows)
+  1. Python 3.12 or newer must be installed once (tested with 3.15):
+     https://www.python.org/downloads/  -  on the first installer screen tick "Add python.exe to PATH".
+  2. Double-click "Start app.bat".
+     The first time, a setup window installs the app's parts (2-5 minutes, needs internet). It
+     installs only the exact versions Sky Gahshomar was tested with, and checks each download
+     against its published checksum. After you unzip a newer version of Sky Gahshomar, the same
+     window appears once more to bring the parts up to date.
+  3. The app opens in its own window (address http://localhost:8513). There is no black window
+     any more: Sky Gahshomar runs quietly in the background while its window is open.
+  4. At the end of the first-time setup a Sky Gahshomar icon is put on your Desktop and in the
+     Start menu. If it is missing (or you move the folder), double-click "Create desktop icon.bat".
+
+STOPPING THE APP
+  * Close the Sky Gahshomar window. The app stops by itself about a minute and a half later.
+  * Or open "This computer: quitting Sky Gahshomar" at the bottom of the page and press
+    "Quit Sky Gahshomar" to stop it at once.
+  * Starting Sky Gahshomar while it is already running simply brings up its window again.
+  * Sky Gahshomar only accepts connections from this computer. Other devices on the same network
+    cannot open it unless you start "Share on this network.bat".
+
+SHARING ON YOUR NETWORK (optional)
+  * Double-click "Share on this network.bat". A window shows the address to open on a phone,
+    tablet or another computer on the same Wi-Fi, and a password that is new every time.
+  * If Windows Firewall asks, allow Python on PRIVATE networks only. Do not share on public
+    Wi-Fi (cafes, hotels, conferences, campus guest networks).
+  * Visitors must enter the password. Only someone at this computer sees the Quit button.
+  * Close that window to stop sharing (this also stops the app).
+  * The password keeps casual visitors out; it is not a substitute for a trusted network.
+
+WHERE YOUR DATA IS KEPT
+  * Sky Gahshomar writes only to your user folder, never to the program folder:
+      %LOCALAPPDATA%\SkyGahshomar\ephem   a replacement NASA JPL ephemeris (see below)
+      %LOCALAPPDATA%\SkyGahshomar\data    a rebuilt table of equinoxes and solstices (see below)
+      %LOCALAPPDATA%\SkyGahshomar\logs    what the app reported while running (last four runs)
+    (paste %LOCALAPPDATA%\SkyGahshomar into the File Explorer address bar to open it).
+  * The ephem and data folders normally do not exist: the program folder already holds both files
+    (ephem\de440s.bsp and data\seasons.csv). They are made only if one of those files goes missing.
+    You may delete them at any time.
+  * Sky Gahshomar stores no personal data. Your place is used only while its window is open and is
+    never written to disk.
+
+IF SKY GAHSHOMAR SAYS ITS FILES HAVE CHANGED
+  * At every start Sky Gahshomar checks its program files against the list in MANIFEST.sha256. If a
+    file is missing or different (deleted by accident, edited, or damaged), it says which ones.
+    The safest fix is to download Sky Gahshomar again and unzip a fresh copy over the old folder
+    (your data in %LOCALAPPDATA%\SkyGahshomar is not affected). This check catches accidents; it is
+    not protection against someone deliberately altering the program.
+  * If the app ever fails to start, the reason is in
+    %LOCALAPPDATA%\SkyGahshomar\logs\skygahshomar.log.
+
+CHECKING YOUR DOWNLOAD
+  * Each release lists the SHA-256 checksum of SkyGahshomar_desktop.zip (in SHA256SUMS.txt). To
+    check a download, open PowerShell in the download folder and run:
+        Get-FileHash SkyGahshomar_desktop.zip -Algorithm SHA256
+    The long number it prints must match the one published with the release.
+
+USING IT
+  * Choose a calendar and a page along the top. "Settings: tradition, place, festivals" holds the
+    community presets, your place and the festival options.
+  * The Compare page shows all five calendars side by side; the other pages show one.
+  * HOW_IT_WORKS.md explains the rules and their sources.

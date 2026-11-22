@@ -1,8 +1,13 @@
 [server]
+fileWatcherType = "none"
+runOnSave = false
 headless = true
 
 [browser]
 gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
 
 # Sky Gahshomar is always dark (night over Persepolis stone, Oxus gold, limestone ivory); the same colours are given
 # for the light slot so that phones in light mode stay dark. theme.FORCE_CSS sets them as well.

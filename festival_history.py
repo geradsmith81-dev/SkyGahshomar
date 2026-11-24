@@ -349,21 +349,66 @@ def title(key: str) -> tuple[str, str]:
     """(English, Persian) title of a festival or calendar key."""
     if key in FESTIVAL:
         return FESTIVAL[key]["en"], FESTIVAL[key]["fa"]
-    return CALENDAR[key]["en"], CALENDAR[key]["fa"]
+    import jashans
+    if key in jashans.EXTRA:
+        e = jashans.EXTRA[key]
+        return e["en"], e.get("fa", "")
+    if key in CALENDAR:
+        return CALENDAR[key]["en"], CALENDAR[key]["fa"]
+    import znames
+    e = znames.FESTIVAL.get(key, {"en": key, "fa": ""})
+    return e["en"], e.get("fa", "")
+
+
+def _prayer_links(key: str) -> str:
+    try:
+        import prayers
+    except ImportError:       # pragma: no cover
+        return ""
+    keys = [k for k in prayers.FESTIVAL_PRAYERS.get(key, []) if k in prayers.PRAYERS]
+    if not keys:
+        return ""
+    return ("<div class='gs-pop-read'>Read: " + " · ".join(
+        f"<a class='gs-pr' href='{html.escape(prayers.PRAYERS[k]['links'][0][1])}' target='_blank'>"
+        f"{html.escape(prayers.PRAYERS[k]['en'])}</a>" for k in keys) + " ↗</div>")
+
+
+def has_text(key: str) -> bool:
+    import jashans
+    return key in H or key in CAL_H or key in jashans.NOTE or key in jashans.HISTORY
 
 
 def body_html(key: str) -> str:
-    text, src = H[key] if key in H else CAL_H[key]
+    """Popover body: what the day commemorates (short), then its history, the prayers to read and sources."""
+    import jashans
     en, fa = title(key)
-    return (f"<div class='gs-pop-title'>{html.escape(en)} <span class='gs-fa-i' lang='fa' dir='rtl'>"
-            f"{html.escape(fa)}</span></div><div class='gs-pop-text'>{html.escape(text)}</div>"
-            f"<div class='gs-pop-src'>Sources: {html.escape(src)}</div>")
+    parts = [f"<div class='gs-pop-title'>{html.escape(en)} <span class='gs-fa-i' lang='fa' dir='rtl'>"
+             f"{html.escape(fa)}</span></div>"]
+    srcs = []
+    if key in jashans.NOTE:
+        note, nsrc = jashans.NOTE[key]
+        parts.append(f"<div class='gs-pop-note'><b>Commemorates:</b> {html.escape(note)}</div>")
+        srcs.append(nsrc)
+    if key in jashans.IRAN:
+        ien, ifa, icustom = jashans.IRAN[key]
+        parts.append(f"<div class='gs-pop-text'><b>In Iran:</b> {html.escape(ien)} <span class='gs-fa-i' lang='fa' "
+                     f"dir='rtl'>{html.escape(ifa)}</span>. {html.escape(icustom)}</div>")
+        srcs.append(jashans.IRAN_SRC)
+    hist = H.get(key) or CAL_H.get(key) or jashans.HISTORY.get(key)
+    if hist:
+        text, src = hist
+        parts.append(f"<div class='gs-pop-text'>{html.escape(text)}</div>")
+        srcs.append(src)
+    parts.append(_prayer_links(key))
+    if srcs:
+        parts.append(f"<div class='gs-pop-src'>Sources: {html.escape('; '.join(srcs))}</div>")
+    return "".join(parts)
 
 
 def clickable(key: str, chip_html: str, align_right: bool = False) -> str:
     """Wrap a festival chip so that clicking it opens its history (no JavaScript needed)."""
-    if key not in H and key not in CAL_H:
+    if not has_text(key):
         return chip_html
     cls = "gs-pop gs-pop-r" if align_right else "gs-pop"
-    return (f"<details class='{cls}'><summary title='Click for the history of this day'>{chip_html}</summary>"
+    return (f"<details class='{cls}'><summary title='Click: what this day commemorates'>{chip_html}</summary>"
             f"<div class='gs-popbody'>{body_html(key)}</div></details>")

@@ -8,6 +8,9 @@ the Iranian Bastani**, plus a **Sasanian reconstruction** shown for comparison o
   and a live *Face the light* compass toward the Sun or the Moon), Month, Year, Gahs (timetable), Prayers (the official prayers as links to their texts), Festivals, Compare
   (the only page that shows all five calendars side by side), Traditions (communities with *Use* presets), How it
   works, About.
+- **Jashan days:** every jashan and festival is clickable and says what it commemorates. Besides the parabs and
+  Gahambars the calendar shows the Atash Behram salgrehs, Parsi remembrances (Homaji ni Baj, Dasturji Kukadaru),
+  the six Pir pilgrimages and Shab-e Yalda (`jashans.py`; sources in docs/JASHAN_SOURCES.md).
 - **Names** in English · Persian · Gujarati, with Avestan script for the roj and Gatha day names (`names.py`).
 - **Location** found automatically (the browser asks once), or chosen from presets (Mumbai, Udvada, Navsari, Surat,
   Karachi, Yazd, Kerman, Tehran, London, Toronto, Los Angeles, Sydney) or any town of 15,000+ people.
@@ -54,6 +57,7 @@ hashes (generated with `uv pip compile requirements.in --universal --python-vers
 
 - `python tools/check_prayer_links.py` checks every prayer link (needs internet).
 - `python tools/prayer_apptest.py` runs focused headless checks of the prayer links.
+- `python tools/jashan_apptest.py` runs focused headless checks of the jashan days.
 
 
 ```

@@ -206,7 +206,7 @@ with panel:
                                         "yazd": "Yazd: Ashtad roj of Adar mah"}[k])
     st.toggle("Show Iranian civil observances with the Parsi calendars", key="iran_civil",
               **({} if "iran_civil" in st.session_state else {"value": False}),
-              help="Sadeh, Chaharshanbe Suri and the civil Tirgan (13 Tir). Always shown with the Bastani calendar.")
+              help="Sadeh, Chaharshanbe Suri, the civil Tirgan (13 Tir), Shab-e Yalda and the six Pir pilgrimages. Always shown with the Bastani calendar.")
     st.toggle("Havan from 36 minutes before sunrise (Havan-ni-Meher)", key="havan_meher",
               **({} if "havan_meher" in st.session_state else {"value": False}))
     with st.expander("Bastani: when Nowruz begins"):
@@ -238,6 +238,7 @@ if "_now_override" in ss:      # tests only: a fixed moment (ISO string with off
     now = datetime.fromisoformat(ss["_now_override"]).astimezone(ZoneInfo(place["tz"]))
 ctx = {"place": place, "cal": cal, "now": now, "today": now.date(), "s": s}
 
+pages.CUR_CAL["cal"] = cal      # Iranian names of the name-day feasts in the Bastani view
 PAGES[page][1](ctx)
 
 st.html("<div class='gs-frieze' role='presentation' style='margin-top:1.2rem'></div>"

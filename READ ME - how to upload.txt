@@ -1,9 +1,12 @@
-Sky Gahshomar - prayer links update (16 Nov 2026)
+Sky Gahshomar - jashan days update (24 Nov 2026)
 
 Upload these files to the GitHub repo geradsmith81-dev/SkyGahshomar, keeping the folder paths:
   1. On github.com open the repo, click 'Add file' > 'Upload files'.
-  2. Drag in the CONTENTS of this 'sky-gahshomar update' folder (prayers.py, pages.py, app.py, theme.py,
-     HOW_IT_WORKS.md, README.md, THIRD_PARTY.md and the 'tools' folder). Do not drag this READ ME.
-  3. Commit changes. prayers.py is a new file; the others replace the old copies.
+  2. Drag in the CONTENTS of this 'sky-gahshomar update' folder: the .py and .md files, MANIFEST.sha256,
+     and the 'docs' and 'tools' folders. Do not drag this READ ME.
+  3. Commit changes. jashans.py, docs/JASHAN_SOURCES.md, docs/jashan_research.json and
+     tools/jashan_apptest.py are new; the other files replace the old copies.
   4. On share.streamlit.io: your app > Manage app > Reboot app.
-The launcher repo does not change.
+
+Desktop copy: copy the same files over your Sky Gahshomar folder. MANIFEST.sha256 has the new checksums,
+so the start-up file check stays quiet. The launcher repo does not change.

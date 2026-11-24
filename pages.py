@@ -19,6 +19,7 @@ import face_light_live
 import festival_history as fh
 import festivals as F
 import gahs as G
+import jashans as JS
 import prayers as PR
 import iran_solar as irs
 import names
@@ -34,13 +35,15 @@ esc = html.escape
 CALS = list(zc.CALENDARS)
 FIRST, LAST = date(1850, 1, 2), date(2149, 12, 30)
 WEEK = [6, 0, 1, 2, 3, 4, 5]          # Sunday first (theme mock-up), Python weekday numbers
-IRAN_ONLY = {"sadeh", "chaharshanbe_suri", "tirgan_civil"}
+IRAN_ONLY = {"sadeh", "chaharshanbe_suri", "tirgan_civil"} | JS.iran_only_keys()
 MULTI = {"muktad"} | {k for k in theme.FESTIVAL_KIND if k.startswith("gahambar_")}
 
 # Popular civil-calendar dates beside the Bastani-calendar jashans (decision 6). Only variants with a source.
 CIVIL_VARIANTS = {
     "jashan_tir": ("Tirgan is kept on 13 Tir in Iran's official calendar (the 'Tirgan, civil 13 Tir' entry).",
                    "surfiran.com, 'Iranian Festivals Calendar 2026/2027'"),
+    "jashan_aspandarmad": ("Sepandarmazgan is also widely kept on 5 Esfand of the civil calendar.",
+                           "Persian Wikipedia, 'سپندارمذگان' (retrieved 24 Nov 2026)"),
     "jashan_meher": ("Some people still mark the older date, 16 Mehr (Meher being the 16th roj).",
                      "livingintehran.com, 'Mehregan' (10 Nov 2026); surfiran.com, 'Iranian Festivals Calendar 2026/2027'"),
 }
@@ -135,8 +138,36 @@ def era_html(z, era: str, short: bool = False) -> str:
     return " · ".join(parts)
 
 
+CUR_CAL = {"cal": None}     # set by app.py before a page is drawn (Iranian feast names in the Bastani view)
+
+
+def fentry(key: str) -> dict:
+    """Display names of a festival key, including the extra jashan days of jashans.py."""
+    if key in JS.EXTRA:
+        e = JS.EXTRA[key]
+        return {"en": e["en"], "fa": e["fa"], "gu": e["gu"]}
+    entry = dict(zn.FESTIVAL.get(key, {"en": key}))
+    if CUR_CAL["cal"] == "bastani" and key in JS.IRAN:
+        entry["en"] = JS.IRAN[key][0]
+        entry["fa"] = JS.IRAN[key][1]
+    return entry
+
+
+def fname(key: str) -> str:
+    return fentry(key)["en"]
+
+
+def jnote(key: str) -> str:
+    """The first sentence of what a jashan day commemorates, as a small line under its chip."""
+    if key not in JS.NOTE:
+        return ""
+    t = JS.NOTE[key][0]
+    cut = t.find(". ")
+    return f"<div class='gs-jnote'>{esc(t[:cut + 1] if 0 < cut < 170 else t)}</div>"
+
+
 def fchip(key: str, align_right: bool = False) -> str:
-    entry = zn.FESTIVAL.get(key, {"en": key})
+    entry = fentry(key)
     kind = theme.FESTIVAL_KIND.get(key, "civil")
     return fh.clickable(key, theme.festival_chip(key, entry, icon=(kind == "fire")), align_right)
 
@@ -345,8 +376,8 @@ def render_today(ctx):
             k = (rd - f.start).days + 1
             extra = f" <span class='gs-muted'>day {k} of {f.days}</span>" if f.days > 1 else ""
             rows.append(f"<div style='margin:.2rem 0'>{fchip(f.key)}{extra} <span class='gs-muted'>{esc(f.note)}</span>"
-                        f"{prayer_line(PR.FESTIVAL_PRAYERS.get(f.key, []))}</div>")
-        fb = "".join(rows) + "<div class='gs-muted'>Click a festival for its history and sources.</div>"
+                        f"{jnote(f.key)}{prayer_line(PR.FESTIVAL_PRAYERS.get(f.key, []))}</div>")
+        fb = "".join(rows) + "<div class='gs-muted'>Click a jashan or festival for what it commemorates, its history and sources.</div>"
     else:
         fb = "<div class='gs-muted'>No festival on this roj.</div>"
     nxt = [f for f in fests_between(ctx, rd + timedelta(days=1), min(rd + timedelta(days=60), LAST))
@@ -426,7 +457,7 @@ def render_month(ctx):
             if f.start == d or d == start:
                 out.append(fchip(f.key, align_right))
             if f.days > 1:
-                out.append(f"<span class='gs-line'>{esc(zn.FESTIVAL[f.key]['en'])}: day <b>{(d - f.start).days + 1}</b>"
+                out.append(f"<span class='gs-line'>{esc(fname(f.key))}: day <b>{(d - f.start).days + 1}</b>"
                            f" of {f.days}</span>")
         for p in moon.get(d, []):
             out.append(phase_line(p))
@@ -591,14 +622,14 @@ def render_festivals(ctx):
                 extra += f"<div class='gs-muted'>{esc(t)}</div><div class='gs-src'>{esc(src)}</div>"
             extra += "</td>"
         rd_ = ' · '.join(prayer_link(k) for k in PR.FESTIVAL_PRAYERS.get(f.key, []))
-        rows.append(f"<tr><td>{fchip(f.key)}</td><td>{zspan(ctx, f)}</td><td>{civ}</td><td>{f.days}</td>{extra}"
+        rows.append(f"<tr><td>{fchip(f.key)}{jnote(f.key)}</td><td>{zspan(ctx, f)}</td><td>{civ}</td><td>{f.days}</td>{extra}"
                     f"<td class='gs-muted'>{esc(f.note)}</td><td>{rd_}</td></tr>")
     head = ("<tr><th>Festival</th><th>Zoroastrian date</th><th>Civil date</th><th>Days</th>"
             + ("<th>Iranian civil date</th>" if cal == "bastani" else "") + "<th>Rule</th><th>Read ↗</th></tr>")
     z0 = zc.to_zdate(zc.navroz(y, cal, **copts(ctx, cal)), cal, **copts(ctx, cal))
     st.html(f"<div class='gs-mdnav'>{theme.calendar_badge(cal)} {era_html(z0, ctx['s']['era'])}</div>"
             + sasanian_note(cal) + f"<table class='gs-table'>{head}{''.join(rows)}</table>"
-            "<div class='gs-muted'>Click a festival for its history and sources.</div>")
+            "<div class='gs-muted'>Click a jashan or festival for what it commemorates, its history and sources.</div>")
     if cal != "bastani" and not ctx["s"]["iran_civil"]:
         st.caption("Sadeh, Chaharshanbe Suri and the civil Tirgan are Iranian observances: they are listed with the "
                    "Bastani calendar, or here if you switch on 'Show Iranian civil observances' in the settings.")
@@ -835,8 +866,8 @@ def render_about(ctx):
     except (OSError, ValueError):
         pass
     rows = "".join(f"<tr><td>{esc(t)}</td><td>{esc(str(k) if k else '')}</td><td>{esc(fld)}</td><td>{esc(why)}</td></tr>"
-                   for (t, k, fld), why in sorted({**names.UNCERTAIN, **PR.UNCERTAIN}.items(), key=lambda x: (str(x[0][0]), str(x[0][1]), x[0][2])))
-    st.html(card(f"Uncertain spellings ({len(names.UNCERTAIN) + len(PR.UNCERTAIN)})",
+                   for (t, k, fld), why in sorted({**names.UNCERTAIN, **PR.UNCERTAIN, **JS.UNCERTAIN}.items(), key=lambda x: (str(x[0][0]), str(x[0][1]), x[0][2])))
+    st.html(card(f"Uncertain spellings ({len(names.UNCERTAIN) + len(PR.UNCERTAIN) + len(JS.UNCERTAIN)})",
                  "<p>Forms the content track could not confirm in a source, or chose between variants:</p>"
                  f"<div class='gs-scroll'><table class='gs-table'><tr><th>Table</th><th>Key</th><th>Field</th><th>Why</th></tr>"
                  f"{rows}</table></div>"))

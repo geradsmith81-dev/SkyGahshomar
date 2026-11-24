@@ -1,0 +1,781 @@
+{
+ "meta": {
+  "compiled": "2026-11-24",
+  "purpose": "Jashan-day data for Sky Gahshomar; research only, no code",
+  "conventions": "Roj/mah use the app's Parsi spellings. 'calendar' = which reckoning the observance follows. Civil dates are Solar Hijri. Gregorian equivalents of Bastani dates assume 1 Farvardin = 21 March.",
+  "sources": [
+   "arith_check"
+  ]
+ },
+ "salgirehs": [
+  {
+   "key": "salgireh_iranshah",
+   "name": "Iranshah Atash Behram (Udvada)",
+   "roj": "Adar",
+   "mah": "Adar",
+   "calendar": "Shahenshahi",
+   "also_kept": [
+    {
+     "calendar": "Fasli",
+     "roj": "Adar",
+     "mah": "Adar",
+     "note": "A separate Fasli salgreh is also held (Parsi Times 2016: 24 Nov 2016 = Fasli Adar/Adar). One community PDF says the 'real' salgreh is the Fasli one."
+    }
+   ],
+   "consecration": {
+    "ce": "721 CE at Sanjan per Heritage Institute; Parsi Times numbering (1298th in 2019, 1304th in 2024) implies 720/721 CE",
+    "yz": "90 AY per Heritage Institute",
+    "udvada_installation_ce": "1742 (present temple; fire in Udvada from 1741)"
+   },
+   "description": "The oldest continuously burning Atash Behram in India, first enthroned at Sanjan by the early Parsi settlers and kept at Udvada since 1741-42. Adar roj of Adar mah, the Adar parab, is kept as the fire's birthday with a jashan by the Vada Dasturjis.",
+   "sources": [
+    "pt_iranshah_2024",
+    "pt_iranshah_2019",
+    "pt_iranshah_fasli_2016",
+    "zn_adar_parab",
+    "heritage_ab"
+   ],
+   "confidence": "high",
+   "check": "20 Apr 2024 and 22 Apr 2019 = Shahenshahi Adar/Adar (arith_check)"
+  },
+  {
+   "key": "salgireh_navsari",
+   "name": "Navsari Atash Behram (Desai / Bhagarsath Atash Behram, Navsari)",
+   "roj": "Sarosh",
+   "mah": "Ardibehesht",
+   "calendar": "Shahenshahi",
+   "consecration": {
+    "ce": "1765-12-02 (Monday)",
+    "yz": "1135"
+   },
+   "description": "Consecrated in 1765 by the Bhagarsath Anjuman under Desai Khurshedji Tehmulji. Its salgreh is marked with a jashan and a flag (zando) procession through the Parsi localities of Navsari.",
+   "sources": [
+    "heritage_ab",
+    "ahuramazda_ab",
+    "pt_sarosh_ardibehesht_2022",
+    "pt_salgrehs_2016"
+   ],
+   "confidence": "high",
+   "check": "2 Dec 1765 -> 1135 Ardibehesht Sarosh (Shahenshahi) agrees"
+  },
+  {
+   "key": "salgireh_dadyseth",
+   "name": "Dadyseth Atash Behram (Mumbai, Fanaswadi)",
+   "roj": "Sarosh",
+   "mah": "Fravardin",
+   "calendar": "Kadmi",
+   "consecration": {
+    "ce": "1783-09-29",
+    "yz": "1153"
+   },
+   "conflict": "Heritage Institute, the zoroastrians.net '9 Atash Behrams' PDF and Parsi Times 2024 give 'Roj Govad, Mah Aspandad 1153'. Encyclopaedia Iranica (citing Patell 1888) and Parsi Times 2025 give Kadmi Sarosh/Fravardin 1153. Parsi Times 2025 calls Govad/Asfandarmad the Shahenshahi equivalent, but by arithmetic the Shahenshahi equivalent of 29 Sep 1783 is Sarosh roj, Aspandarmad mah, not Govad. Kadmi Sarosh/Fravardin is the only form consistent with the Gregorian date.",
+   "also_kept": [
+    {
+     "calendar": "Gregorian",
+     "date": "29 September",
+     "note": "Parsi Times 2025 reports that this Atash Behram celebrates its salgreh twice a year: on its roj day and on the Gregorian anniversary."
+    }
+   ],
+   "description": "Bombay's first Atash Behram, built by Dadibhai Noshirwanji Dadyseth and consecrated by Mulla Kaus bin Rustam Jalal, the first Kadmi Dastur. For nearly fifty years it was the city's only Atash Behram.",
+   "sources": [
+    "iranica_dadyseth_ab",
+    "pt_dadyseth_2025",
+    "pt_dadyseth_2024",
+    "heritage_ab"
+   ],
+   "confidence": "high (Kadmi Sarosh/Fravardin); conflicting variant noted",
+   "check": "29 Sep 1783 -> Kadmi 1153 Fravardin Sarosh agrees; Shahenshahi = Aspandarmad Sarosh"
+  },
+  {
+   "key": "salgireh_modi_surat",
+   "name": "Modi (Shahenshahi) Atash Behram, Surat (Seth Dadabhai Naoshirwanji Modi Atash Behram)",
+   "roj": "Sarosh",
+   "mah": "Ardibehesht",
+   "calendar": "Shahenshahi",
+   "consecration": {
+    "ce": "1823-11-19",
+    "yz": "1193"
+   },
+   "description": "Surat's Shahenshahi Atash Behram, consecrated in 1823. Its salgreh begins with a machi in Havan Gah and a 'Kavyani Zando' (flag) procession.",
+   "sources": [
+    "heritage_ab",
+    "pt_modi_2018",
+    "pt_sarosh_ardibehesht_2022"
+   ],
+   "confidence": "high",
+   "check": "19 Nov 1823 -> 1193 Ardibehesht Sarosh (Shahenshahi) agrees; 195th salgreh on 2 Oct 2018 agrees"
+  },
+  {
+   "key": "salgireh_vakil_surat",
+   "name": "Vakil (Kadmi) Atash Behram, Surat (Seth Pestonji Kalabhai Vakil Kadmi Atash Behram, Shahpore)",
+   "roj": "Ardibehesht",
+   "mah": "Tir",
+   "calendar": "Kadmi",
+   "consecration": {
+    "ce": "1823-12-05",
+    "yz": "1193"
+   },
+   "conflict": "Heritage Institute and Parsi Times 2022 also print 'Roz Ardibehest, Mah Khordad, 1193' for the same day; by arithmetic that is the Shahenshahi equivalent. The Kadmi date, which the temple keeps, is Ardibehesht/Tir (Parsi Times 2022; ahuramazda.com).",
+   "description": "Founded by the lawyer Pestonji Kalabhai Vakil after a court case (1819-22) brought by Shahenshahi families to stop a Kadmi Atash Behram being built. Tradition says fire from a tree struck by lightning was used in the consecration.",
+   "sources": [
+    "pt_vakil_2022",
+    "ahuramazda_ab",
+    "heritage_ab",
+    "palvkasti_cal"
+   ],
+   "confidence": "high",
+   "check": "5 Dec 1823 -> Kadmi 1193 Tir Ardibehesht; Shahenshahi 1193 Khordad Ardibehesht; palvkasti 16 Oct 2026 'Kadmi Atash Behram Surat' = Kadmi Tir Ardibehesht agrees"
+  },
+  {
+   "key": "salgireh_wadiaji",
+   "name": "Wadiaji Atash Behram, Mumbai (Seth Hormusji Bomanji Wadia Atash Behram, Princess Street)",
+   "roj": "Sarosh",
+   "mah": "Ardibehesht",
+   "calendar": "Shahenshahi",
+   "consecration": {
+    "ce": "1830-11-17",
+    "yz": "1200"
+   },
+   "description": "Consecrated in 1830 under Dasturji Jamshedji Edulji Jamaspasa (Shahenshahi) with Kadmi participation. Its salgreh is kept with a Havan Gah machi and morning and evening jashans.",
+   "sources": [
+    "heritage_ab",
+    "pt_wadia_2017",
+    "pt_sarosh_ardibehesht_2022",
+    "ahuramazda_ab"
+   ],
+   "confidence": "high",
+   "check": "17 Nov 1830 -> 1200 Ardibehesht Sarosh agrees; 2 Oct 2017 agrees"
+  },
+  {
+   "key": "salgireh_banaji",
+   "name": "Banaji Atash Behram, Mumbai (Cawasjee Byramjee Banaji Atash Behram, Thakurdwar)",
+   "roj": "Sarosh",
+   "mah": "Khordad",
+   "calendar": "Shahenshahi",
+   "consecration": {
+    "ce": "1845-12-13",
+    "yz": "1215"
+   },
+   "conflict": "Heritage Institute and the '9 Atash Behrams' PDF label it '(Kadmi)'. But its salgreh dates (31 Oct 2021, Parsi Times; 30 Oct 2026, palvkasti 'S') and the 1845 consecration date all fall on Sarosh/Khordad only in the Shahenshahi reckoning. Kadmi Sarosh/Khordad would come 30 days earlier.",
+   "description": "Mumbai's Banaji Atash Behram at Thakurdwar, consecrated in 1845. Its salgreh is kept with a morning jashan and humbandagi.",
+   "sources": [
+    "pt_banaji_2021",
+    "heritage_ab",
+    "palvkasti_cal"
+   ],
+   "confidence": "high for roj/mah; calendar = Shahenshahi on date evidence (Heritage 'Kadmi' label contradicted)",
+   "check": "13 Dec 1845 -> Shahenshahi 1215 Khordad Sarosh; 31 Oct 2021 -> Shahenshahi 1391 Khordad Sarosh"
+  },
+  {
+   "key": "salgireh_anjuman",
+   "name": "Anjuman Atash Behram, Mumbai (Zarthoshti Anjumanna Atash Behram, Dhobi Talao)",
+   "roj": "Ardibehesht",
+   "mah": "Ardibehesht",
+   "calendar": "Shahenshahi",
+   "consecration": {
+    "ce": "1897-10-17",
+    "yz": "1267"
+   },
+   "conflict": "Parsi Times 2017 quotes the Nayab Dasturji that the foundation stone was laid on 'Roj Daepaadar, Mah Ardibehesht, 17 Oct 1897', which cannot both be true: 17 Oct 1897 is Ardibehesht roj. The salgreh itself is kept on Ardibehesht roj, Ardibehesht mah.",
+   "description": "The youngest Atash Behram in India, enthroned in 1897 and in the care of the JamaspAsa family of dasturs. It falls on the Ardibehesht parab, a day associated with fire.",
+   "sources": [
+    "pt_anjuman_2025",
+    "pt_anjuman_2017",
+    "heritage_ab",
+    "ahuramazda_ab"
+   ],
+   "confidence": "high",
+   "check": "17 Oct 1897, 18 Sep 2017, 17 Sep 2022 all = Shahenshahi Ardibehesht/Ardibehesht"
+  }
+ ],
+ "iranian_names": [
+  {
+   "app_key": "jashan_fravardin",
+   "iranian_name": "Farvardingan",
+   "persian": "فروردینگان",
+   "bastani_date": "19 Farvardin",
+   "civil_date_bastani": "19 Farvardin (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "A feast of remembrance of the departed; since Zoroastrianism has no mourning rites of the usual kind, the souls of the dead are included in the rejoicing.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_ardibehesht",
+   "iranian_name": "Ordibeheshtgan (also Golestan-jashn)",
+   "persian": "اردیبهشتگان",
+   "bastani_date": "3 Ordibehesht",
+   "civil_date_bastani": "2 Ordibehesht (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "A fire feast; white clothing is worn as a sign of purity, and because it falls when flowers bloom it is also called Golestan-jashn, the feast of flowers.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_khordad",
+   "iranian_name": "Khordadgan",
+   "persian": "خردادگان",
+   "bastani_date": "6 Khordad",
+   "civil_date_bastani": "4 Khordad (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Kept in honour of water and prosperity; Persian Wikipedia notes a survival in the 'Shast-o-Sheshi' rite of Sian village (Isfahan).",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_tir",
+   "iranian_name": "Tirgan",
+   "persian": "تیرگان",
+   "bastani_date": "13 Tir",
+   "civil_date_bastani": "10 Tir (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "In honour of Tishtrya, the rain-bringing star: water-splashing, the fal-e kuzeh (jar augury) and the rainbow 'tir-o-bad' wrist-band.",
+   "sources": [
+    "fawiki"
+   ],
+   "note": "The app already has tirgan_civil (13 Tir civil); the Bastani Tirgan falls on civil 10 Tir."
+  },
+  {
+   "app_key": "jashan_amardad",
+   "iranian_name": "Amordadgan",
+   "persian": "امردادگان",
+   "bastani_date": "7 Amordad",
+   "civil_date_bastani": "3 Mordad (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Honours Amordad (immortality), guardian of plants; people traditionally went out to gardens and fields.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_shehrevar",
+   "iranian_name": "Shahrivargan (also Azar-jashn)",
+   "persian": "شهریورگان",
+   "bastani_date": "4 Shahrivar",
+   "civil_date_bastani": "30 Mordad (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Today Zoroastrians treat it as Father's Day; historically a household fire feast.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_meher",
+   "iranian_name": "Mehregan (Jashn-e Mehr)",
+   "persian": "مهرگان",
+   "bastani_date": "16 Mehr",
+   "civil_date_bastani": "10 Mehr (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Feast of Mehr (Mithra), regarded as the second-greatest Iranian festival after Nowruz and tied to the autumn equinox.",
+   "sources": [
+    "fawiki",
+    "enwiki_zfest"
+   ],
+   "note": "Project memory records that the app already shows Bastani Mehregan = civil 10 Mehr and notes the civil 16 Mehr variant."
+  },
+  {
+   "app_key": "jashan_avan",
+   "iranian_name": "Abangan",
+   "persian": "آبانگان",
+   "bastani_date": "10 Aban",
+   "civil_date_bastani": "4 Aban (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Honours Aban / Aredvi Sura Anahita, the waters; Persian Wikipedia describes it as kept in praise of the flowing waters.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_adar",
+   "iranian_name": "Azargan (Azar-jashn)",
+   "persian": "آذرگان",
+   "bastani_date": "9 Azar",
+   "civil_date_bastani": "3 Azar (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "The fire feast: fires are kindled and fire temples visited (al-Biruni via Persian Wikipedia).",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_dae",
+   "iranian_name": "Deygan (four Dey feasts); first is Khorram-ruz",
+   "persian": "دیگان / خرم‌روز",
+   "sub_days": [
+    {
+     "roj": "Hormazd (1 Dey)",
+     "name": "Khorram-ruz / Dey-dadar jashn",
+     "persian": "خرم‌روز",
+     "civil_date_bastani": "25 Azar"
+    },
+    {
+     "roj": "Dey-be-Azar (8 Dey)",
+     "persian": "دی‌به‌آذر",
+     "civil_date_bastani": "2 Dey"
+    },
+    {
+     "roj": "Dey-be-Mehr (15 Dey)",
+     "persian": "دی‌به‌مهر",
+     "civil_date_bastani": "9 Dey"
+    },
+    {
+     "roj": "Dey-be-Din (23 Dey)",
+     "persian": "دی‌به‌دین",
+     "civil_date_bastani": "17 Dey"
+    }
+   ],
+   "custom": "Four days named for the Creator (Dadar); al-Biruni says that on Khorram-ruz the king came down from his throne, dressed in white and sat with farmers. Zoroastrians gather at their places of worship on all four days.",
+   "sources": [
+    "fawiki_khorramruz",
+    "amordad_deygan",
+    "amordad_chelleh_yasna"
+   ]
+  },
+  {
+   "app_key": "jashan_bahman",
+   "iranian_name": "Bahmangan (also Bahmanjeneh)",
+   "persian": "بهمنگان",
+   "bastani_date": "2 Bahman",
+   "civil_date_bastani": "26 Dey (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "Honours Vohu Manah (good mind), protector of useful animals; Zoroastrians abstain from slaughtering and eating them, and milk or egg is placed on the ritual spread.",
+   "sources": [
+    "fawiki"
+   ]
+  },
+  {
+   "app_key": "jashan_aspandarmad",
+   "iranian_name": "Sepandarmazgan (Esfandgan)",
+   "persian": "سپندارمذگان",
+   "bastani_date": "5 Esfand (Aspandarmad)",
+   "civil_date_bastani": "29 Bahman (Solar Hijri civil date of the Bastani day; computed)",
+   "custom": "A day honouring women, the earth and fertility (love for 'woman, earth and generation'); al-Biruni records gifts exchanged between men and women.",
+   "sources": [
+    "fawiki"
+   ],
+   "conflict": "Persian Wikipedia says it is held on '5 Esfand of the Hijri-shamsi calendar'. By Bastani arithmetic (30-day months from 21 Mar), however, Bastani 5 Esfand = civil 29 Bahman (~18 Feb). Both forms are in popular use; the app should show the Bastani date and could note the civil 5 Esfand form."
+  }
+ ],
+ "yalda": {
+  "key": "shab_e_yalda",
+  "names": [
+   "Shab-e Yalda (شب یلدا)",
+   "Shab-e Chelleh / Chilla (شب چله), 'night of the fortieth'"
+  ],
+  "rule_civil": "The night between the last day of Azar (30 Azar) and 1 Dey of the Iranian civil (Solar Hijri) calendar, i.e. the evening of 30 Azar. Wikipedia gives this as the night of 21 December (20 December in leap years).",
+  "relation_to_solstice": "It is celebrated as the winter-solstice night, the longest night of the year, and it opens the 'great Chelleh', the 40 days from 1 Dey to 11 Bahman. The festival is tied to the civil calendar date, not to the exact moment of the solstice. Because the Solar Hijri year starts at the March equinox and 1 Dey falls on 21 or 22 December, the astronomical solstice lands on 30 Azar or 1 Dey (inferred from calendar structure; the app can show the computed JPL solstice instant beside it).",
+  "zoroastrian_observance": "Iranian Zoroastrians mark it as 'Jashn-e Shab-e Chelleh'. The Rasti almanac, the first publisher of the Iranian Zoroastrian calendar, greets both Deygan and 'the longest night of the year, Jashn-e Shab-e Chelleh' (Amordad News). In older Zoroastrian tradition the night was inauspicious: people kept vigil together against evil. The next day, 1 Dey, was the feast al-Biruni calls Khorram-ruz ('joyful day') or Navad-ruz ('ninety days' before Nowruz). Zoroastrians, especially Parsis, call that day Dey-dadar jashn.",
+  "bastani_offset_note": "In the Bastani reckoning, Hormazd roj of Dey mah (Khorram-ruz / first Deygan) falls on civil 25 Azar, about 5 days before civil Yalda (Amordad News; computed). Some Zoroastrian groups hold their Chelleh celebration 'in the auspiciousness of Deygan' on that Bastani day, e.g. a Yasna kindergarten event on 26 Azar 1402 (Amordad News).",
+  "suggested_app_rule": "Civil: evening of 30 Azar (eve of 1 Dey). Label it 'Shab-e Yalda / Shab-e Chelleh'; link 1 Dey civil to Khorram-ruz only as a historical note, because the app's jashan_dae already marks Bastani Hormazd roj of Dae mah.",
+  "sources": [
+   "enwiki_yalda",
+   "amordad_deygan",
+   "amordad_chelleh_yasna",
+   "fawiki_khorramruz"
+  ],
+  "confidence": "high (civil rule); medium (Zoroastrian naming)"
+ },
+ "pirs": {
+  "general": {
+   "calendar_statement": "All six dates are given by CGIE as Zoroastrian roj/mah ranges with Solar Hijri equivalents, and the civil equivalents are exactly what Bastani (seasonal, 30-day months from 21 March) arithmetic gives. So they are fixed civil/Bastani dates and do not move through the seasons as Qadimi dates would. Gregorian equivalents are for non-leap alignment; in years where 1 Farvardin = 20 or 22 March they shift by one day (inferred).",
+   "boyce": "Boyce (1977), as quoted secondarily, says each pilgrimage officially lasts five days, and that these sanctuaries (five in the hills, one in the plain near Yazd) were held in communal trust. Boyce was not read directly.",
+   "iranica": "Encyclopaedia Iranica entries 'Pir-e Sabz' / 'Pirs' were not retrieved (iranicaonline.org blocks automated access and no search extract surfaced); not cited for dates.",
+   "sources": [
+    "riowang_chakchak",
+    "boyce_1977_via_tenets",
+    "arith_check"
+   ]
+  },
+  "items": [
+   {
+    "key": "pir_herisht",
+    "name": "Pir-e Herisht",
+    "persian": "پیر هریشت",
+    "place": "Near Sharifabad, Ardakan district, Yazd province; the Sharifabad anjoman looks after it.",
+    "bastani": {
+     "mah": "Farvardin",
+     "roj_from": "Amordad (7)",
+     "roj_to": "Khorshed (11)"
+    },
+    "civil": "7-11 Farvardin",
+    "gregorian": "27-31 March",
+    "days": 5,
+    "legend": "Dedicated to Morvarid, a royal maid (lady-in-waiting) of the fleeing Sasanian household. Tradition says she appeared years later to a child and asked that the shrine be built.",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "heritage_pilgrimage",
+     "kojaro_pirs",
+     "safarmarket_pirs"
+    ],
+    "note": "One travel source (safarnevis.com) instead mentions a 25-26 Farvardin gathering tied to a 'Hiromba' feast; not used."
+   },
+   {
+    "key": "pir_sabz",
+    "name": "Pir-e Sabz (Chak Chak)",
+    "persian": "پیر سبز (چک‌چک)",
+    "place": "Chak Chak, Ardakan County, Yazd province, about 50-70 km from Yazd (sources differ).",
+    "bastani": {
+     "mah": "Khordad",
+     "roj_from": "Ashtad (26)",
+     "roj_to": "Aneran (30)"
+    },
+    "civil": "24-28 Khordad",
+    "gregorian": "14-18 June",
+    "days": 5,
+    "legend": "The grotto where princess Nikbanu, daughter of Yazdegerd III, fled from the Arab army; in answer to her prayer the mountain opened and sheltered her. The dripping spring is said to be the mountain's tears for her, and the old plane tree her staff.",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "heritage_pilgrimage",
+     "heritage_piresabz",
+     "enwiki_chakchak",
+     "parsikhabar_chakchak",
+     "boyce_1977_via_tenets",
+     "enwiki_pir",
+     "fezana_abangan"
+    ],
+    "conflict": "Heritage Institute writes the roj range as 'Ashtad-Mahraspand' (4 roj), but its own Gregorian range of 14-18 June is 5 days, matching CGIE's Ashtad-Aneran. Wikipedia 'Pir (Zoroastrianism)' says 15-18 June. Use 24-28 Khordad civil = 14-18 June."
+   },
+   {
+    "key": "pir_seti",
+    "name": "Seti Pir (Pir-e Mah-Seti)",
+    "persian": "ستی پیر",
+    "place": "Maryamabad, an eastern suburb of Yazd city (a below-ground shrine).",
+    "bastani": {
+     "mah": "Khordad",
+     "roj_from": "Ashtad (26)",
+     "roj_to": "Ashtad (26)"
+    },
+    "civil": "24 Khordad",
+    "gregorian": "14 June",
+    "days": 1,
+    "legend": "Dedicated to the queen (Shahbanu) Hastbadan, wife of Yazdegerd III. It is often visited on the way to Pir-e Sabz, on the first day of that pilgrimage.",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "heritage_pilgrimage",
+     "kojaro_pirs"
+    ],
+    "conflict": "sacredsites.com gives 'June 14-18' (the whole Pir-e Sabz period); CGIE, Heritage Institute and Kojaro give the single day 24 Khordad."
+   },
+   {
+    "key": "pir_narestaneh",
+    "name": "Pir-e Narestaneh (Narestan)",
+    "persian": "پیر نارستانه",
+    "place": "In the Kuh-e Darbid / Kharanaq hills about 41 km from Yazd (Amordad News); the Maryamabad Zoroastrian Anjoman prepares the site.",
+    "bastani": {
+     "mah": "Tir",
+     "roj_from": "Aspandarmad (5)",
+     "roj_to": "Adar (9)"
+    },
+    "civil": "2-6 Tir",
+    "gregorian": "23-27 June",
+    "days": 5,
+    "legend": "Associated with prince Ardeshir of the fleeing royal household; the shrine was founded after a radiant man appeared in a dream and asked for it.",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "amordad_narestaneh",
+     "amordad_narestaneh_2026",
+     "berasad_narestaneh",
+     "heritage_pilgrimage",
+     "safarmarket_pirs"
+    ]
+   },
+   {
+    "key": "pir_banu",
+    "name": "Pir-e Banu (Banu-Pars, Pars Banu)",
+    "persian": "پیر بانو / پارس بانو",
+    "place": "Near Zarju, Shamsabad, Ardakan district, Yazd province, on a hillside by a seasonal river.",
+    "bastani": {
+     "mah": "Tir",
+     "roj_from": "Meher (16)",
+     "roj_to": "Behram (20)"
+    },
+    "civil": "13-17 Tir",
+    "gregorian": "4-8 July",
+    "days": 5,
+    "legend": "Princess Banu-Pars (in some tellings Khatun Banu) fled the Arabs and vanished into the mountain; a cleft in the rock marks the spot. She is said to have healed a blind man in a dream and asked him to build the shrine.",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "heritage_pilgrimage",
+     "kojaro_pirs",
+     "safarmarket_pirs"
+    ]
+   },
+   {
+    "key": "pir_naraki",
+    "name": "Pir-e Naraki",
+    "persian": "پیر نارکی",
+    "place": "In the Naraki hills about 15 km from Mehriz, south of Yazd.",
+    "bastani": {
+     "mah": "Amordad",
+     "roj_from": "Meher (16)",
+     "roj_to": "Behram (20)"
+    },
+    "civil": "12-16 Mordad",
+    "gregorian": "3-7 August",
+    "days": 5,
+    "legend": "Associated with Nazbanu, described as the daughter of the Sasanian governor of Pars (Heritage Institute) or as a daughter of Yazdegerd III (safarnevis); other tellings name Zarbanu, a royal bride of Pars (Kojaro).",
+    "sources": [
+     "cgie_zardoshtiyan",
+     "amordad_naraki",
+     "heritage_pilgrimage",
+     "safarmarket_pirs",
+     "kojaro_pirs"
+    ],
+    "note": "Persian Wikipedia redirects 'پیر نارکی' to 'پیر نارستانه'; the two are distinct shrines in every other source and have different dates."
+   }
+  ]
+ },
+ "other": [
+  {
+   "key": "homaji_ni_baj",
+   "name": "Homaji ni Baj",
+   "roj": "Govad",
+   "mah": "Dae",
+   "calendar": "Shahenshahi",
+   "description": "Death anniversary of Behdin Homa Jamshed Zaahiaa of Bharuch, a Shahenshahi Parsi hanged in Bombay in 1783 (1152 YZ) on false testimony during the Kabiseh (calendar) controversy. He is remembered as the patron saint of the falsely accused, with jashan and baj prayers.",
+   "sources": [
+    "pt_homaji_2023",
+    "avesta_wzse369",
+    "mumbaiparsi_2014",
+    "zac_2024_nl"
+   ],
+   "check": "3 Jun 2023 and 3 Jun 2020 = Shahenshahi Dae/Govad"
+  },
+  {
+   "key": "kukadaru_birthday",
+   "name": "Birthday of Dasturji Jamshedji Sorab Kukadaru",
+   "roj": "Zamyad",
+   "mah": "Avan",
+   "calendar": "Shahenshahi",
+   "year": {
+    "ce": "1831-05-27",
+    "yz": "1200"
+   },
+   "description": "Birth anniversary of the 19th-century Bombay priest revered for his asceticism and reputed miracles. His portrait hangs in most Atash Behrams and agiaries, and communities hold a jashan on the day.",
+   "sources": [
+    "frashogard_kukadaru",
+    "zac_2024_nl",
+    "enwiki_kukadaru"
+   ],
+   "check": "27 May 1831 and 9 Apr 2024 = Shahenshahi Avan/Zamyad",
+   "conflict": "Wikipedia gives the birth as 26 May 1831. The blog 'Musings of a Mumbai Parsi' calls Zamyad roz/Avan mah his death anniversary, but frashogard and the ZAC calendar treat it as his birthday, and Behram/Fravardin as his Baj."
+  },
+  {
+   "key": "kukadaru_baj",
+   "name": "Baj (death anniversary) of Dasturji Kukadaru",
+   "roj": "Behram",
+   "mah": "Fravardin",
+   "calendar": "Shahenshahi",
+   "year": {
+    "ce": "1900-10-04",
+    "yz": "1270"
+   },
+   "description": "Death anniversary of Dasturji Kukadaru, observed with baj prayers and jashans.",
+   "sources": [
+    "frashogard_kukadaru",
+    "zac_2024_nl",
+    "enwiki_kukadaru"
+   ],
+   "check": "4 Oct 1900 and 3 Sep 2024 = Shahenshahi Fravardin/Behram",
+   "conflict": "Wikipedia gives the death date as 4 January 1900; 4 January 1900 is not Behram/Fravardin (it is Govad/Tir). 4 October 1900 (frashogard) agrees with the roj/mah."
+  }
+ ],
+ "not_found": [
+  "Yazd Atash Bahram salgireh: no roj/mah or civil anniversary of its consecration or installation found. Sources give only the building's years (begun Aban 1313 SH / 1934; finished 1315 SH; fire installed 1318 SH per alibaba.ir), and these disagree.",
+  "Asho Zarathushtra's Navjote: no fixed roj/mah observance found in sources consulted.",
+  "Jashan for the Parsi arrival/landing at Sanjan: no fixed roj/mah or civil date found.",
+  "Behram roj observances: monthly (every Behram roj), not an annual jashan; not listed.",
+  "Meatless (nabor) days of Bahman mah: the whole month (and Bahman, Mohor, Gosh, Ram roj in every month) by custom, not a single fixed jashan; not listed.",
+  "Encyclopaedia Iranica 'Pir-e Sabz' and 'Pirs' articles: not retrieved (blocked / no extract); Boyce 1977 read only through a secondary quotation.",
+  "Bombay Parsi Punchayet, Jam-e-Jamshed and Parsiana calendars: not directly retrieved. Parsiana's Vakil article was seen only as a search snippet without dates; Parsi Times, Parsi Khabar and community PDFs were used instead."
+ ],
+ "sources": {
+  "heritage_ab": {
+   "title": "Zoroastrian Places of Worship: Atash Bahram (K. E. Eduljee, Zoroastrian Heritage)",
+   "url": "https://www.heritageinstitute.com/zoroastrianism/temples/atashbahram.htm",
+   "accessed": "2026-11-24"
+  },
+  "pt_iranshah_2024": {
+   "title": "Shreeji Pak Iranshah Atashbehram Celebrates 1304th Salgreh, Parsi Times, May 2024",
+   "url": "https://parsi-times.com/2024/05/shreeji-pak-iranshah-atashbehram-celebrates-1304th-salgreh/"
+  },
+  "pt_iranshah_2019": {
+   "title": "Salgreh Celebrations At Pak Iran Shah (Udvada), Parsi Times, 27 Apr 2019",
+   "url": "https://parsi-times.com/2019/04/salgreh-celebrations-at-pak-iran-shah-udvada/"
+  },
+  "pt_iranshah_fasli_2016": {
+   "title": "Iranshah Atash Behram Celebrates Fasli Salgreh, Parsi Times, 26 Nov 2016",
+   "url": "https://parsi-times.com/2016/11/iranshah-atash-behram-celebrates-fasli-salgreh/"
+  },
+  "zn_adar_parab": {
+   "title": "Adar Roj of Adar Mah is known as Adar nu Parab (PDF), zoroastrians.net, 2023",
+   "url": "https://zoroastrians.net/wp-content/uploads/2023/04/Adar-nu-Parab-Atash-nu-Varas.pdf"
+  },
+  "pt_sarosh_ardibehesht_2022": {
+   "title": "Celebrating Salgrehs of Our Holy Atashbehrams On Roj-Sarosh, Mah-Ardibehesht, Parsi Times, Oct 2022",
+   "url": "https://parsi-times.com/2022/10/celebrating-salgrehs-of-our-holy-atashbehrams-on-roj-sarosh-mah-ardibehesht/"
+  },
+  "pt_wadia_2017": {
+   "title": "Wadiaji Atash Behram Celebrates 188th Salgreh, Parsi Times, 7 Oct 2017",
+   "url": "https://parsi-times.com/2017/10/wadiaji-atash-behram-celebrates-188th-salgreh/"
+  },
+  "pt_salgrehs_2016": {
+   "title": "Celebrating Salgrehs Of Our Atash Behrams And Agiaries, Parsi Times, 8 Oct 2016",
+   "url": "https://parsi-times.com/2016/10/celebrating-salgrehs-atash-behrams-agiaries/"
+  },
+  "pt_modi_2018": {
+   "title": "Surat's Modi Atash Behram Celebrates 195th Salgreh (Community News archive), Parsi Times, Oct 2018",
+   "url": "https://parsi-times.com/category/community-news/page/225/"
+  },
+  "pt_dadyseth_2025": {
+   "title": "Dadyseth Atash Behram Celebrates Glorious 242nd Salgreh, Parsi Times, Oct 2025",
+   "url": "https://parsi-times.com/2025/10/dadyseth-atash-behram-celebrates-glorious-242ndsalgreh/"
+  },
+  "pt_dadyseth_2024": {
+   "title": "Dadysett Atash Behram Celebrates Salgreh, Parsi Times, 5 Oct 2024",
+   "url": "https://parsi-times.com/2024/10/dadysett-atash-behram-celebrates-salgreh/"
+  },
+  "iranica_dadyseth_ab": {
+   "title": "Dadyseth Ataš Bahrām, Encyclopaedia Iranica (citing Patell 1888, p. 86; Patell 1906, pp. 15-17); read via search-result extract only",
+   "url": "https://www.iranicaonline.org/articles/dadyseth-atas-bahram-the-oldest-atas-bahiam-q/"
+  },
+  "pt_vakil_2022": {
+   "title": "The Glorious Seth Pestonji Kalabhai Vakil Kadmi Atash Behram, Parsi Times, Oct 2022",
+   "url": "https://parsi-times.com/2022/10/the-glorious-seth-pestonji-kalabhai-vakil-kadmi-atash-behram/"
+  },
+  "ahuramazda_ab": {
+   "title": "Atash Behrams - India (sources: Brief History of Anjuman Atash Behram 1897-1996; M. J. Giara, Global Directory of Zoroastrian Fire Temples)",
+   "url": "https://www.ahuramazda.com/pages/fire_temple_atash_behram_.html"
+  },
+  "pt_banaji_2021": {
+   "title": "Banaji Atashbehram Celebrates Glorious 177th Salgreh, Parsi Times, 6 Nov 2021",
+   "url": "https://parsi-times.com/2021/11/banaji-atashbehram-celebrates-glorious-177th-salgreh/"
+  },
+  "pt_anjuman_2017": {
+   "title": "Anjuman Atash Behram Celebrates 120th Salgreh, Parsi Times, 23 Sep 2017",
+   "url": "https://parsi-times.com/2017/09/anjuman-atash-behram-celebrates-120th-salgreh/"
+  },
+  "pt_anjuman_2025": {
+   "title": "Anjuman AtashBehram Celebrates Glorious 128th Salgreh, Parsi Times, Sep 2025",
+   "url": "https://parsi-times.com/2025/09/anjuman-atashbehram-celebrates-glorious-128th-salgreh/"
+  },
+  "palvkasti_cal": {
+   "title": "Parsi Calendar 2026-27 (Shahenshahi with Kadmi/Fasli; salgreh list)",
+   "url": "https://palvkasti.com/parsi-calendar"
+  },
+  "yazd_ab_fa": {
+   "title": "Persian travel/heritage pages on Ātashkadeh-ye Yazd (kojaro.com; alibaba.ir; jabama.com)",
+   "url": "https://www.kojaro.com/thingstodo/194508-yazd-zoroastrian-fire-temples/ ; https://www.alibaba.ir/mag/yazd/yazd-ci/yazd-atash-behram/"
+  },
+  "fawiki": {
+   "title": "Persian Wikipedia articles: فروردینگان، اردیبهشتگان، خردادگان، تیرگان، امردادگان، شهریورگان، مهرگان، آبانگان، آذرگان، خرم‌روز (دیگان)، بهمنگان، سپندارمذگان (retrieved via MediaWiki API 2026-11-24)",
+   "url": "https://fa.wikipedia.org/wiki/سپندارمذگان (and sibling titles)"
+  },
+  "fawiki_khorramruz": {
+   "title": "خرم‌روز (Deygan), Persian Wikipedia",
+   "url": "https://fa.wikipedia.org/wiki/خرم‌روز"
+  },
+  "amordad_deygan": {
+   "title": "نماوای نیایش اورمزدیشت به خجستگی جشن‌های چهارگانه دیگان, Amordad News",
+   "url": "https://amordadnews.com/101595/"
+  },
+  "amordad_chelleh_yasna": {
+   "title": "جشن شب چله مهدکودک یسنا با گردهمایی خانواده‌ها, Amordad News (Dec 2023)",
+   "url": "https://amordadnews.com/188653/"
+  },
+  "enwiki_yalda": {
+   "title": "Yalda Night, English Wikipedia (retrieved 2026-11-24)",
+   "url": "https://en.wikipedia.org/wiki/Yalda_Night"
+  },
+  "enwiki_zfest": {
+   "title": "Zoroastrian festivals, English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Zoroastrian_festivals"
+  },
+  "cgie_zardoshtiyan": {
+   "title": "زردشتیان (Zardoshtiyan), Dāyerat-ol-Ma'āref-e Bozorg-e Eslāmi / Center for the Great Islamic Encyclopaedia (cgie.org.ir), read via search extract",
+   "url": "https://www.cgie.org.ir/fa/article/246854/زردشتیان?entryviewid=246857"
+  },
+  "heritage_pilgrimage": {
+   "title": "Pilgrimage in Zoroastrianism: The Six Pirs and Pilgrimage Calendar (K. E. Eduljee, Zoroastrian Heritage)",
+   "url": "http://www.heritageinstitute.com/zoroastrianism/worship/pilgrimage.htm"
+  },
+  "heritage_piresabz": {
+   "title": "Pir-e Sabz / Chak-Chak (Zoroastrian Heritage)",
+   "url": "https://www.heritageinstitute.com/zoroastrianism/worship/piresabz.htm"
+  },
+  "enwiki_chakchak": {
+   "title": "Chak Chak, Yazd, English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chak_Chak,_Yazd"
+  },
+  "enwiki_pir": {
+   "title": "Pir (Zoroastrianism), English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pir_(Zoroastrianism)"
+  },
+  "parsikhabar_chakchak": {
+   "title": "Zoroastrians Flock to Sacred Temple for Annual Pilgrimage, Parsi Khabar, 2017",
+   "url": "https://parsikhabar.net/iran/zoroastrians-flock-to-sacred-temple-for-annual-pilgrimage/15483/"
+  },
+  "amordad_narestaneh": {
+   "title": "نیایش همگانی زرتشتیان در پیر نارستانه؛ نگین کوه دربید, Amordad News",
+   "url": "https://amordadnews.com/11134/"
+  },
+  "amordad_narestaneh_2026": {
+   "title": "آماده‌سازی پیر نارستانه برای نیایش همگانی زرتشتیان, Amordad News (2026)",
+   "url": "https://amordadnews.com/296911/"
+  },
+  "berasad_narestaneh": {
+   "title": "پیر نارستانه category, Berasad (Zoroastrian news site)",
+   "url": "https://berasad.com/category/مراسم-ها/پیر-نارستانه"
+  },
+  "amordad_naraki": {
+   "title": "دانستنی‌هایی درباره‌ی پیر نارکی, Amordad News",
+   "url": "https://amordadnews.com/7438/"
+  },
+  "safarmarket_pirs": {
+   "title": "زیارتگاه های زرتشتیان یزد, Safarmarket blog",
+   "url": "https://safarmarket.com/blog/attractions/iran/yazd/yazd-zoroastrians-shrines"
+  },
+  "kojaro_pirs": {
+   "title": "استان یزد، زیارتگاه پیروان زرتشت, Kojaro",
+   "url": "https://www.kojaro.com/iran-visit/179236-yazd-zoroastrian-sacred-places/"
+  },
+  "boyce_1977_via_tenets": {
+   "title": "Mary Boyce, A Persian Stronghold of Zoroastrianism (Oxford: Clarendon Press, 1977), quoted (not read directly) at tenets.parsizoroastrianism.com 'Zarathustri Pilgrimage Sites In Iran'",
+   "url": "http://tenets.parsizoroastrianism.com/ZarathustriPilgrimageSitesInIran.html"
+  },
+  "riowang_chakchak": {
+   "title": "Poemas del río Wang: Chak Chak (blog; notes dedications of each Pir and that most figures are unattested historically)",
+   "url": "https://riowang.blogspot.com/2016/08/chak-chak.html"
+  },
+  "fezana_abangan": {
+   "title": "FEZANA Religious Education Committee, Abangan celebration lesson (PDF) — Pir-e Sabz legend",
+   "url": "https://fezana.org/wp-content/uploads/FEZANA-REC-Celebration-Abangan-Grades-1-3.pdf"
+  },
+  "pt_homaji_2023": {
+   "title": "Significance of Homaji's Baj, Parsi Times, 3 Jun 2023",
+   "url": "https://parsi-times.com/2023/06/significance-of-homajis-baj/"
+  },
+  "avesta_wzse369": {
+   "title": "Weekly Zoroastrian Scripture Extract #369: Homaji ni Baj (avesta.org)",
+   "url": "https://www.avesta.org/wzse/wzse369.pdf"
+  },
+  "frashogard_kukadaru": {
+   "title": "Death Anniversary of Dastur Kukadaru, frashogard.com (2007)",
+   "url": "https://www.frashogard.com/category/famous-parsis/zarathushtrian-miracles/page/3/"
+  },
+  "zac_2024_nl": {
+   "title": "Zoroastrian Association of California newsletter, Jan 2024 (event calendar)",
+   "url": "https://zacla.org/wp-content/uploads/2024/01/ZAC-2024-Jan-NL.pdf"
+  },
+  "mumbaiparsi_2014": {
+   "title": "The Parsi calendar still retains its significance, Musings of a Mumbai Parsi (blog), 24 Nov 2014",
+   "url": "https://mumbai-parsi.blogspot.com/2014/"
+  },
+  "enwiki_kukadaru": {
+   "title": "Jamshedji Sorab Kukadaru, English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Jamshedji_Sorab_Kukadaru"
+  },
+  "arith_check": {
+   "title": "Arithmetic check: Shahenshahi epoch 1 Fravardin 1391 YZ = 16 Aug 2021, 365-day year; Kadmi = Shahenshahi + 30 days; Bastani months of 30 days from 21 Mar mapped onto the Solar Hijri 31/30-day months. Run in this session; every Gregorian date reported by the sources above was converted and agreed unless noted.",
+   "url": "(computed)"
+  }
+ },
+ "not_found_sources": {
+  "Yazd Atash Bahram": [
+   "yazd_ab_fa"
+  ]
+ }
+}

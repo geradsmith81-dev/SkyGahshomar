@@ -56,17 +56,18 @@ CARNELIAN = orn.CARNELIAN
 CHIP = {
     "new_year": "#f0cf72", "gahambar": "#e9c88f", "jashan": "#bccff4", "gatha": "#a6e0da",
     "memorial": "#cdd0d9", "birth": "#c6e6b6", "fire": "#f4c3a0", "moon": "#d8d2f2", "civil": "#e9e0c9",
-    "recon": "#e4d9c2",
+    "recon": "#e4d9c2", "salgireh": "#f5b0a0", "pilgrimage": "#e6b8e0",
 }
 KIND_LABEL = {
     "new_year": "New Year", "gahambar": "Gahambar (seasonal feast)", "jashan": "Jashan (name-day feast)",
     "gatha": "Gatha days / Muktad", "memorial": "Remembrance", "birth": "Birth of Zarathushtra",
     "fire": "Fire festival", "moon": "Mah Niyayesh (Moon prayer)", "civil": "Civil calendar",
-    "recon": "Reconstruction",
+    "recon": "Reconstruction", "salgireh": "Atash Behram salgreh", "pilgrimage": "Pilgrimage (Pir)",
 }
 KIND_FA = {
     "new_year": "نوروز", "gahambar": "گاهنبار", "jashan": "جشن", "gatha": "گاتها", "memorial": "یادبود",
     "birth": "زادروز", "fire": "جشن آتش", "moon": "ماه نیایش", "civil": "گاه‌شماری رسمی", "recon": "بازسازی",
+    "salgireh": "سالگرد آتش بهرام", "pilgrimage": "زیارت پیر",
 }
 # Festival key (shared contract) -> chip kind.
 FESTIVAL_KIND = {
@@ -79,6 +80,11 @@ FESTIVAL_KIND = {
     "sadeh": "fire", "chaharshanbe_suri": "fire", "mah_niyayesh": "moon",
     "rapithwin_jashan": "jashan", "tirgan_civil": "civil",   # extra engine keys
 }
+try:   # extra jashan days (jashans.py): salgirehs, pilgrimages, remembrances, Yalda
+    import jashans as _jashans
+    FESTIVAL_KIND.update({_k: _e["kind"] for _k, _e in _jashans.EXTRA.items()})
+except ImportError:   # pragma: no cover
+    pass
 # Default calendar labels for the badge (the names module may pass its own). Gujarati: Parsi usage for the
 # three Parsi calendars; 'Bastani' and 'Sasanian' in Gujarati are transliterations.
 # Calendar labels come from names.CALENDAR, the canonical display source (app assembly, Nov 2026; the theme
@@ -232,10 +238,14 @@ h1, h2, h3, h4 {{ font-family: {SERIF}; color: {GOLD}; }}
 .gs-popbody {{ position: absolute; z-index: 1000; left: 0; top: calc(100% + 4px); width: 340px; max-width: 80vw;
               background: {CARD}; color: {TEXT}; border: 1px solid {GOLD}; border-radius: 6px; padding: .7rem .85rem;
               box-shadow: 0 8px 24px rgba(0,0,0,.65); font-size: .86rem; line-height: 1.45; text-align: left;
-              white-space: normal; font-weight: 400; }}
+              white-space: normal; font-weight: 400; max-height: 60vh; overflow-y: auto; }}
 .gs-pop-r .gs-popbody {{ left: auto; right: 0; }}
 .gs-pop-title {{ font-family: {SERIF}; color: {GOLD}; font-weight: 700; font-size: 1rem; margin-bottom: .3rem; }}
 .gs-pop-text {{ color: {TEXT}; }}
+.gs-pop-note {{ color: {TEXT}; margin-bottom: .35rem; padding-bottom: .35rem; border-bottom: 1px solid {GOLD_DEEP}; }}
+.gs-pop-note b {{ color: {GOLD}; }}
+.gs-pop-read {{ margin-top: .4rem; }}
+.gs-jnote {{ color: {MUTED}; font-size: .8rem; line-height: 1.35; margin-top: .15rem; }}
 .gs-pop-src {{ color: {MUTED}; font-size: .78rem; margin-top: .45rem; font-style: italic; }}
 .gs-scroll {{ overflow-x: auto; -webkit-overflow-scrolling: touch; max-height: 70vh; overflow-y: auto;
               border: 1px solid {GOLD_DEEP}; border-radius: 6px; background: {CARD}; }}

@@ -63,6 +63,8 @@ class Festival:
         return self.start + timedelta(days=self.days - 1)
 
     def label(self) -> str:
+        if self.key not in zn.FESTIVAL:          # extra jashan days (jashans.py)
+            return self.names.get("en", self.key)
         return zn.display(zn.FESTIVAL, self.key)
 
 
@@ -83,7 +85,7 @@ def _cal_opts(opts):
 
 
 def festivals_in_year(year: int, cal: str, muktad: str = "ten", jamshedi: str = "fixed_21_march",
-                      sadeh: str = "iran", **opts) -> list:
+                      sadeh: str = "iran", jashan_days: bool = True, **opts) -> list:
     """All festivals of one Zoroastrian year (year = YZ, or ZRE for Bastani), sorted by date."""
     o = _cal_opts(opts)
     M = zn.MAH_NUMBER
@@ -147,6 +149,9 @@ def festivals_in_year(year: int, cal: str, muktad: str = "ten", jamshedi: str = 
     # Jamshedi Navroz in the civil year of this calendar year's spring
     out.extend(_jamshedi_for_year(year, cal, jamshedi, o, nz, last))
     out.extend(_iranian_civil(year, cal, sadeh, o, nz, last))
+    if jashan_days:
+        import jashans      # extra jashan days: Atash Behram salgirehs, Pir pilgrimages, Yalda ...
+        out.extend(f for f in jashans.extras_between(nz, last, cal, **o) if nz <= f.start <= last)
     return sorted(out, key=lambda f: (f.start, f.key))
 
 

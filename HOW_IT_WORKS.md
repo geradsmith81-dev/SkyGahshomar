@@ -69,6 +69,45 @@ Iran's Nowruz for Bastani); Khordad Sal; Zarthost no Diso; Farvardigan; Rapithwi
 (`sadeh="iran"` civil 10 Bahman, `"kerman"` Aban roj Bahman mah, `"yazd"` Ashtad roj Adar mah);
 Chaharshanbe Suri (Tuesday evening before the last Wednesday of the Iranian year); Tirgan civil 13 Tir.
 
+### 4a. Jashan days (what each day commemorates)
+Every jashan and festival chip is clickable. The popover starts with a short **Commemorates** note: who or what
+is honoured and how the day is kept. Then come the Iranian name of the feast (for the twelve name-day parabs:
+Farvardingan … Sepandarmazgan), the longer history, the prayers to read (links to avesta.org) and the sources.
+The Today and Festivals pages also print the first sentence of the note under each chip. In the **Bastani**
+calendar the name-day feasts are labelled with their Iranian names (Mehregan, Abangan, Azargan …).
+
+Besides the parabs, Gahambars and holy days, the calendar has these jashan days (`jashans.py`, sources in
+docs/JASHAN_SOURCES.md):
+- **Atash Behram salgrehs** (consecration anniversaries), each kept by its own reckoning and shown on the matching
+  civil day in the Shahanshahi, Kadmi and Fasli calendars:
+  - Iranshah, Udvada: Adar roj, Adar mah, Shahanshahi; a second, Fasli salgreh on Adar roj, Adar mah Fasli.
+  - Navsari, Surat Modi and Mumbai Wadiaji: Srosh roj, Ardibehesht mah, Shahanshahi.
+  - Mumbai Banaji: Srosh roj, Khordad mah, Shahanshahi. Some lists label it Kadmi, but its dates follow the
+    Shahanshahi reckoning.
+  - Mumbai Anjuman: Ardibehesht roj, Ardibehesht mah, Shahanshahi.
+  - Mumbai Dadyseth: Srosh roj, Fravardin mah, **Kadmi**, plus its Gregorian anniversary on 29 September. The
+    "Govad roj, Aspandarmad mah" printed in some lists does not match the 1783 consecration date.
+  - Surat Vakil: Ardibehesht roj, Tir mah, **Kadmi**.
+  - The anniversary of the Yazd Atash Bahram could not be found, so it is not shown.
+- **Parsi remembrances:** Homaji ni Baj (Govad roj, Dae mah); the birthday (Zamyad roj, Avan mah) and Baj
+  (Behram roj, Fravardin mah) of Dasturji Kukadaru. All three are Shahanshahi.
+- **The pilgrimages to the six Pirs** near Yazd, fixed in the Bastani reckoning (civil dates in brackets):
+  - Pir-e Herisht: 7–11 Farvardin.
+  - Seti Pir: 24 Khordad.
+  - Pir-e Sabz (Chak Chak): 24–28 Khordad, about 14–18 June.
+  - Pir-e Narestaneh: 2–6 Tir.
+  - Pir-e Banu: 13–17 Tir.
+  - Pir-e Naraki: 12–16 Mordad.
+- **Shab-e Yalda / Shab-e Chelleh:** the evening of 30 Azar of the Iranian civil calendar.
+
+The Pirs and Yalda are Iranian observances. Like Sadeh, they are shown with the Bastani calendar, and with the
+Parsi calendars when 'Show Iranian civil observances' is on.
+
+Limits of the sourcing: Encyclopaedia Iranica and the Persian Great Islamic Encyclopaedia were read only through
+search extracts, and Boyce's *A Persian Stronghold of Zoroastrianism* (1977) only through a quotation. Several
+salgreh dates rest on community newspapers (Parsi Times) checked against the calendar arithmetic. Where sources
+disagree, the app follows the form that agrees with the consecration date, and the popover says so.
+
 ### 5. Gahs, Rapithwin, Moon and light
 Havan sunrise→true noon; Rapithwin (or Second Havan) noon→noon+3 h; Uziran →sunset; Aiwisruthrem
 →solar midnight; Ushahin →next sunrise. The Bombay prayer-guide times (Havan to 12:40, Rapithwin 12:40–3:40)

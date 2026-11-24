@@ -206,6 +206,11 @@ FESTIVAL_PRAYERS = {
     "jashan_bahman": ["bahman_yasht"],
     "jashan_aspandarmad": ["siroza"],
     "mah_niyayesh": ["mah_niyayesh"],
+    # extra jashan days (jashans.py): a fire's salgreh is kept with the Atash Niyayesh; a baj with the Afrinagan
+    **{k: ["atash_niyayesh"] for k in ("salgireh_iranshah", "salgireh_iranshah_fasli", "salgireh_navsari",
+                                        "salgireh_modi", "salgireh_wadiaji", "salgireh_banaji", "salgireh_anjuman",
+                                        "salgireh_dadyseth", "salgireh_dadyseth_greg", "salgireh_vakil")},
+    "homaji_ni_baj": ["afrinagan_dahman"], "kukadaru_baj": ["afrinagan_dahman"],
 }
 
 GATHA_DAY_PRAYERS = {
